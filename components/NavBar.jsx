@@ -60,7 +60,7 @@ const NavBar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 z-[100] flex items-center justify-between w-full px-3 py-4 transition-all duration-300 ${
+        className={`bg-gradient-to-b from-black/70 to-transparent fixed top-0 z-[100] flex items-center justify-between w-full px-3 py-4 transition-all duration-300 ${
           scrolled
             ? "backdrop-blur-[6px] backdrop-saturate-[180%] bg-black/30"
             : ""

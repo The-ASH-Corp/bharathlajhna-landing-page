@@ -58,7 +58,7 @@ const HeroCarousel = ({ data }) => {
                     </motion.h1>
                     <motion.p
                     variants={textVariants}
-                    className="text-lg max-w-60">
+                    className="text-lg max-w-60 text-center">
                       {item.subtitle}
                     </motion.p>
                   </motion.div>
