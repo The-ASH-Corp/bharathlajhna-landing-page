@@ -81,7 +81,7 @@ const InquiryCard = () => {
                   bgColor="#ca943a"
                   paddingX="6px"
                   paddingY="6px"
-                  fontSize="8px"
+                  fontSize="10px"
                   className="absolute right-1 lg:right-3 text-[8px] z-[4]"
                 >
                   SEND REQUEST

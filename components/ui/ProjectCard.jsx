@@ -3,8 +3,10 @@
 import Button from "./Button"
 import { MdLocationOn } from "react-icons/md";
 import { FaBuilding } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 const ProjectCard = ({ title,image,place,squareFeet }) => {
+    const router = useRouter()
   return (
     <>
         <div className="relative m-auto w-[200px] sm:w-[340px] lg:w-[355px] h-[240px] sm:h-[410px] lg:h-[585px] flex flex-col items-start justify-end p-[12px] lg:p-[32px] bg-slate-300 bg-no-repeat bg-cover bg-center"
@@ -20,7 +22,9 @@ const ProjectCard = ({ title,image,place,squareFeet }) => {
             height="40px"
             bgColor="white"
             textColor="black"
-            className="z-10 sm:text-[12px] lg:text-[16px]">
+            className="z-10 sm:text-[12px] lg:text-[16px]"
+            onClick={() => router.push("/projects")}
+            >
                 See More
             </Button>
 

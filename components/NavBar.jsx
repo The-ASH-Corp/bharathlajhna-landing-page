@@ -66,7 +66,7 @@ const NavBar = () => {
             : ""
         }`}
       >
-        <div className="w-14">
+        <Link href={'/'} className="w-14">
           <Image
             src={"/assets/images/nav-logo.png"}
             alt="Logo"
@@ -74,7 +74,7 @@ const NavBar = () => {
             height={100}
             priority={true}
           />
-        </div>
+        </Link>
         <div className="hidden md:block">
           <ul className="flex items-center justify-center text-white gap-9 font-poppins font-light">
             <li>

@@ -31,3 +31,17 @@ body {
     text-wrap: balance;
   }
 }
+
+.swal-button-success {
+  background-color: #00664E; 
+  color: white;           
+  font-size: 16px;        
+  padding: 5px 20px;       
+  border-radius: 0px;       
+  border: none;             
+  cursor: pointer;        
+}
+
+.swal-container {
+  border-radius: 0px;       
+}

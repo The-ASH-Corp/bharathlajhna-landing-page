@@ -5,9 +5,11 @@ import { GrStatusGood } from "react-icons/gr";
 import { BsDownload } from "react-icons/bs";
 import { BsUpload } from "react-icons/bs";
 import { useRef, useState } from "react";
+import { submitMemberShipForm } from "@/app/actions";
+import Swal from 'sweetalert2'
 
 const DownloadAndSubmit = () => {
-  const [ fileName, setFileName ] = useState("")
+  const [ file, setFile ] = useState("")
   const fileInputRef = useRef(null);
 
   const handleFileSelect = (e) => {
@@ -15,13 +17,71 @@ const DownloadAndSubmit = () => {
     if (file) {
       console.log("Selected file:", file.name);
       // file handling logic
-      setFileName(file.name)
+      setFile(file)
     }
   };
 
   const triggerFileInput = () => {
     fileInputRef.current?.click();
   };
+
+  const handleSubmit = async () => {
+    try {
+      console.log(file);
+      Swal.fire({
+        title: 'Submitting...',
+        text: 'Please wait while we process your submission.',
+        icon: 'info',
+        allowOutsideClick: false, // Prevent closing the modal on outside click
+        showConfirmButton: false, // Hide the confirm button
+        didOpen: () => {
+          Swal.showLoading(); // Show loading spinner
+        },
+        customClass:{
+          confirmButton:"swal-button-success",
+          popup:"swal-container",
+          
+        }
+      });
+
+      await submitMemberShipForm(file)
+
+        // Close the loading alert
+      Swal.close();
+
+
+      Swal.fire({
+        title: 'Success!',
+        text: 'Your membership form has been submitted successfully.',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        customClass:{
+          confirmButton:"swal-button-success",
+          popup:"swal-container",
+          
+        }
+        
+      });
+      
+    } catch (error) {
+      console.log({error});
+
+       // Close the loading alert in case of an error
+    Swal.close();
+
+      Swal.fire({
+        title: 'Error!',
+        text: 'There was an issue submitting your form. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+        customClass:{
+          confirmButton:"swal-button-success",
+          popup:"swal-container",
+          
+        }
+      });
+    }
+  }
 
 
   return (
@@ -38,10 +98,10 @@ const DownloadAndSubmit = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mt-8">
           <div className="flex flex-col items-start justify-end w-full bg-[#F6F6F6] h-48 sm:h-40 lg:h-48 p-6 gap-3 relative">
             <GrStatusGood className="text-2xl lg:text-2xl sm:text-xl" />
-            <h1 className="font-poppins text-black text-md lg:text-base sm:text-xs">
+            <h1 className="font-poppins text-black text-md lg:text-base sm:text-xs" >
               Click Submit
             </h1>
-            <button className="font-poppins bg-primary_color text-white text-base lg:text-base sm:text-xs px-4 py-2">
+            <button className="font-poppins bg-primary_color text-white text-base lg:text-base sm:text-xs px-4 py-2" onClick={handleSubmit}>
               Submit
             </button>
 
@@ -61,7 +121,7 @@ const DownloadAndSubmit = () => {
             <h1 className="font-poppins text-black text-md sm:text-xs lg:text-base w-2/3">
               Download Your Membership Form
             </h1>
-            <a href="/assets/files/pdf-test.pdf" download={"form.pdf"}>
+            <a href="/assets/files/BLM-membership.pdf" download={"BLM-membership.pdf"}>
               <button className="font-poppins bg-primary_color text-white text-base sm:text-xs lg:text-base px-4 py-2">
                 Download
               </button>
@@ -97,8 +157,8 @@ const DownloadAndSubmit = () => {
                 Choose File
               </button>
               {
-                fileName &&
-                <p className="text-ellipsis overflow-hidden max-w-[120px] whitespace-nowrap">{fileName}</p>
+                file &&
+                <p className="text-ellipsis overflow-hidden max-w-[120px] whitespace-nowrap">{file.name}</p>
               }
             </div>
 

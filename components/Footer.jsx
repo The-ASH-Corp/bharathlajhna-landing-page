@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -29,21 +30,27 @@ const Footer = () => {
         </div>
 
         <div className="w-full flex flex-col items-center justify-center gap-10 z-10">
-          <div className="w-[280px]">
+          <div className="">
             <Title className={"text-center"}>
               We are available in multiple states
             </Title>
           </div>
           <div className="flex gap-3">
-            <FancyButton name={"KERALA"} />
+            <Link href={"/branch?tab=kerala"} >
+             <FancyButton name={"KERALA"}  />
+            </Link>
+            <Link href={"/branch?tab=tamil"}>
             <FancyButton name={"TAMIL NADU"} />
+            </Link>
+            <Link href={"/branch?tab=pondi"}>
             <FancyButton name={"PONDICHERRY"} />
+            </Link>
           </div>
         </div>
 
         <div className="w-full flex flex-col justify-end sm:flex-row sm:justify-start gap-7 sm:gap-2 mt-10 font-poppins px-8">
           <div className="w-full flex justify-between">
-            <div className="flex flex-col gap-8 sm:flex-row sm:gap-10 lg:gap-32">
+            <div className="sm:w-full flex flex-col gap-8 sm:flex-row sm:gap-10 lg:gap-32 sm:justify-around sm:items-start">
               <div>
                 <h1 className="text-[10px] sm:text-[12px] text-black opacity-50 mb-2">
                   HOUSING PROJECT
@@ -86,9 +93,33 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
+              <div className="hidden sm:block">
+                <div className="relative w-[100px] h-[120px] lg:w-[200px] lg:h-[200px]">
+                  <Image
+                    src={"/assets/images/footer-logo.png"}
+                    alt="footer logo"
+                    fill
+                    className="object-contain w-full"
+                  />
+                </div>
+                <div className="w-full flex justify-center gap-3 lg:gap-6 text-[#454545] sm:text-lg lg:text-2xl">
+                  <a href="#">
+                    <FaFacebook />
+                  </a>
+                  <a href="#">
+                    <FaLinkedin />
+                  </a>
+                  <a href="#">
+                    <FaYoutube />
+                  </a>
+                  <a href="#">
+                    <FaInstagram />
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-80 sm:mt-0">
+            <div className="mt-80 sm:mt-0 sm:hidden">
               <div className="relative w-[100px] h-[120px] lg:w-[200px] lg:h-[200px]">
                 <Image
                   src={"/assets/images/footer-logo.png"}

@@ -4,11 +4,14 @@ import { GALLERY_QUERY } from "@/constants/strapiQueries";
 import useStrapi from "@/hooks/useStrapi";
 import { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useSearchParams } from "next/navigation";
 
 
 const GalleryTabs = () => {
 
-    const [ activeTab, setActiveTab ] = useState("photo_gallery")
+  const searchParams = useSearchParams()
+
+    const [ activeTab, setActiveTab ] = useState(searchParams.get("tab") || "photo_gallery")
     const [ photoGallery, setPhotoGallery ] = useState([])
     const [ videoGallery, setVideoGallery ] = useState([])
     const [ celebrations, setCelebrations ] = useState([])

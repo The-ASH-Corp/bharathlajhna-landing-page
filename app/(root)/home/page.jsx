@@ -20,12 +20,13 @@ import { useEffect, useState } from "react";
 import useStrapi from "@/hooks/useStrapi";
 import { HOMEPAGE_QUERY } from "@/constants/strapiQueries";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useRouter } from 'next/navigation'
 
 
 
 const Home = () => {
 
-  const [ projectTab, setProjectTab] = useState("Kerala")
+  const [ projectTab, setProjectTab] = useState("kerala")
   const [ newsTab, setNewsTab] = useState("news")
   const [ herosliderData, setHeroSliderData ] = useState([])
   const [ serviceData, setServiceData ] = useState([])
@@ -36,7 +37,7 @@ const Home = () => {
   const projectTitle = ["Kerala", "Tamil Nadu", "Pondicherry"]
 
   const {data,loading, error} = useStrapi("/api/home-page",HOMEPAGE_QUERY)
-  
+  const router = useRouter()
 
   useEffect(() => {
     if (data?.data?.blocks) {
@@ -266,9 +267,9 @@ const Home = () => {
           <div className="flex w-full justify-between">
             <div className="flex gap-6">
               <button
-                onClick={() => setProjectTab("Kerala")}
+                onClick={() => setProjectTab("kerala")}
                 className={`text-[14px] sm:text-[20px] lg:text-[22px] font-poppins  ${
-                  projectTab === "Kerala"
+                  projectTab === "kerala"
                     ? "border-b-[1px] border-accent_color text-black"
                     : "text-para_color"
                 }`}
@@ -276,9 +277,9 @@ const Home = () => {
                 Kerala
               </button>
               <button
-                onClick={() => setProjectTab("Tamil")}
+                onClick={() => setProjectTab("tamil")}
                 className={`text-[14px] sm:text-[20px] lg:text-[22px] font-poppins  ${
-                  projectTab === "Tamil"
+                  projectTab === "tamil"
                     ? "border-b-[1px] border-accent_color text-black"
                     : "text-para_color"
                 }`}
@@ -286,9 +287,9 @@ const Home = () => {
                 Tamil Nadu
               </button>
               <button
-                onClick={() => setProjectTab("Pondi")}
+                onClick={() => setProjectTab("pondi")}
                 className={`text-[14px] sm:text-[20px] lg:text-[22px] font-poppins  ${
-                  projectTab === "Pondi"
+                  projectTab === "pondi"
                     ? "border-b-[1px] border-accent_color text-black"
                     : "text-para_color"
                 }`}
@@ -317,7 +318,7 @@ const Home = () => {
               </Button>
             </div>
           </div>
-          {projectTab === "Kerala" &&
+          {projectTab === "kerala" &&
             projectData.map((item, index) => {
               if (item.label === "Kerala") {
                 return (
@@ -328,7 +329,7 @@ const Home = () => {
                 );
               }
             })}
-          {projectTab === "Tamil" &&
+          {projectTab === "tamil" &&
             projectData.map((item, index) => {
               if (item.label === "Tamilnadu") {
                 return (
@@ -339,7 +340,7 @@ const Home = () => {
                 );
               }
             })}
-          {projectTab === "Pondi" &&
+          {projectTab === "pondi" &&
             projectData.map((item, index) => {
               if (item.label === "Pondichery") {
                 return (
@@ -606,6 +607,7 @@ const Home = () => {
               paddingX="20px"
               paddingY="12px"
               className="flex items-center justify-center gap-2"
+              onClick={() => router.push("/gallery?tab=video_gallery")}
             >
               See more <BsArrowRight />
             </Button>

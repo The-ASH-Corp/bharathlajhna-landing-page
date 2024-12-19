@@ -15,7 +15,7 @@ const ServiceCard = ({ title = "Title", image = "" }) => {
             {title}
           </h1>
           <Link
-            href={"/"}
+            href={"/service"}
             className="flex items-center justify-center text-accent_color text-[10px] sm:text-[12px] lg:text-[16px] font-poppins"
           >
             Read More <RiArrowRightSLine />

@@ -7,10 +7,12 @@ import{IoLocationOutline} from 'react-icons/io5'
 import Image from 'next/image'
 import useStrapi from '@/hooks/useStrapi'
 import { BRANCH_QUERY } from '@/constants/strapiQueries'
+import { useSearchParams } from 'next/navigation'
 
 
 const BranchClient = () => {
-        const [ activeTab, setActiveTab ] = useState("kerala")
+  const searchParams = useSearchParams()
+        const [ activeTab, setActiveTab ] = useState(searchParams.get("tab") || "kerala")
         const [ keralaData, setKeralaData ] = useState([])
         const [ tamilData, setTamilData ] = useState([])
         const [ pondiData, setPondiData ] = useState([])
@@ -81,7 +83,7 @@ const BranchClient = () => {
           {operationalHubs?.map((data, index) => (
             <div
               key={index}
-              className="w-full flex flex-col p-6 gap-5 relative"
+              className="w-full flex flex-col p-6 gap-5 relative bg-slate-50"
             >
               <div>
                 <h1 className="font-allenoire text-xl tracking-wider">
@@ -161,12 +163,12 @@ const BranchClient = () => {
       </section>
 
       <SectionDivision />
-      <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 items-start justify-start w-full xl:max-w-[1290px] my-6 lg:my-10">
+      <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 items-start justify-start w-full xl:max-w-[1290px] my-6 lg:my-10 gap-3">
         {activeTab === "kerala" &&
           keralaData.map((branch, index) => (
             <div
               key={index}
-              className="w-full flex flex-col p-6 gap-5 relative"
+              className="w-full flex flex-col p-6 gap-5 relative bg-slate-50"
             >
               <div>
                 <h1 className="font-poppins text-sm font-semibold">
@@ -201,7 +203,7 @@ const BranchClient = () => {
           tamilData.map((branch, index) => (
               <div
                 key={index}
-                className="w-full flex flex-col p-6 gap-5 relative"
+                className="w-full flex flex-col p-6 gap-5 relative bg-slate-50"
               >
                 <div>
                   <h1 className="font-poppins text-sm font-semibold">
@@ -236,7 +238,7 @@ const BranchClient = () => {
           pondiData.map((branch, index) => (
               <div
                 key={index}
-                className="w-full flex flex-col p-6 gap-5 relative"
+                className="w-full flex flex-col p-6 gap-5 relative bg-slate-50"
               >
                 <div>
                   <h1 className="font-poppins text-sm font-semibold">

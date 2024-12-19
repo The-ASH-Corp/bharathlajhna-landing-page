@@ -1,10 +1,10 @@
 'use client'
 
 
-const FancyButton = ({ name }) => {
+const FancyButton = ({ name, onClick }) => {
   return (
     <>
-      <div className="relative w-[105px] sm:w-[177px] lg:w-[250px] h-[35px] sm:h-[59px] lg:h-[83px] bg-primary_color overflow-hidden flex items-center justify-center">
+      <div className="relative w-[105px] sm:w-[177px] lg:w-[250px] h-[35px] sm:h-[59px] lg:h-[83px] bg-primary_color overflow-hidden flex items-center justify-center" onClick={onClick}>
         <h1 className="text-accent_color font-poppins text-[12px] sm:text-[17px] lg:text-[24px]">
             { name }
         </h1>
