@@ -62,6 +62,8 @@ const DownloadAndSubmit = () => {
         }
         
       });
+
+      setFile("")
       
     } catch (error) {
       console.log({error});
