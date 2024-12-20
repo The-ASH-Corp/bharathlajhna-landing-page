@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { GALLERY_QUERY } from "@/constants/strapiQueries";
 import useStrapi from "@/hooks/useStrapi";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useSearchParams } from "next/navigation";
 

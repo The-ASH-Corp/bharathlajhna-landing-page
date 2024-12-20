@@ -2,11 +2,12 @@ import GalleryTabs from "@/components/GalleryTabs";
 import SectionDivision from "@/components/ui/SectionDivision";
 import Title from "@/components/ui/Title";
 import Image from "next/image";
+import { Suspense } from "react";
 
 const Gallery = () => {
 
   return (
-    <>
+    <Suspense>
     
       <main className="relative w-full h-[80vh]">
         <Image
@@ -34,7 +35,7 @@ const Gallery = () => {
 
       </main>
      
-    </>
+    </Suspense>
   );
 };
 

@@ -3,6 +3,7 @@ import InquiryCard from "@/components/InquiryCard";
 import SectionDivision from "@/components/ui/SectionDivision";
 import Title from "@/components/ui/Title";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "BLM - Branch",
@@ -12,7 +13,7 @@ const Branch = () => {
 
 
   return (
-    <>
+    <Suspense>
       
 
       <main className="relative w-full h-[80vh]">
@@ -48,7 +49,7 @@ const Branch = () => {
         </section>
       </main>
      
-    </>
+    </Suspense>
   );
 };
 
