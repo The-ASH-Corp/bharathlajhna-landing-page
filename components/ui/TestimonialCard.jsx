@@ -19,6 +19,7 @@ const TestimonialCard = ({
       >
         <div className="absolute top-[10px] lg:top-[40px] left-[20px] lg:left-[50px] w-[74px] lg:w-[130px] h-[74px] lg:h-[130px] z-0">
           <Image
+          priority={true}
             src={"/assets/icons/left-quets.svg"}
             alt="left-quote"
             fill
@@ -30,6 +31,7 @@ const TestimonialCard = ({
           <div className="flex items-center justify-center gap-2">
             <div className="relative w-[35px] lg:w-[45px] h-[35px] lg:h-[45px] rounded-full overflow-hidden">
               <Image
+              priority={true}
                 src={ profileImg }
                 alt="Profile-picture"
                 fill

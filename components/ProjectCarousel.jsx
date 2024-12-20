@@ -1,16 +1,16 @@
 'use client'
 
 
-import React, { useEffect, useState } from 'react';
-import ProjectCard from "./ui/ProjectCard"
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { useEffect, useState } from 'react';
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import ProjectCard from "./ui/ProjectCard";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import '../public/styles/customSwiper.css'
+import '../public/styles/customSwiper.css';
 
 const ProjectCarousel = ({ data }) => {
   const [domLoaded, setDomLoaded] = useState(false);

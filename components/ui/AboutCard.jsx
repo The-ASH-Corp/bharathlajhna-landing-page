@@ -12,12 +12,14 @@ const AboutCard = ({title, description, icon}) => {
           alt="about icon"
           width={100}
           height={100}
+          priority={true}
         />
         <Image
           className="mb-4"
           src={icon}
           alt="about icon"
           width={40}
+          priority={true}
           height={40}
         />
         <h1 className="font-allenoire text-base mb-1">{title}</h1>

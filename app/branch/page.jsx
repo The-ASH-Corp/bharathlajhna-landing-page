@@ -21,7 +21,7 @@ const Branch = () => {
           alt="BLM"
           src="/assets/images/branch-hero.png"
           fill
-          priority
+          priority={true}
           sizes="100vw"
           quality={85}
           className="w-full absolute top-0 left-0 object-cover object-center"

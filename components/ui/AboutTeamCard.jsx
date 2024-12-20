@@ -13,7 +13,9 @@ const AboutTeamCard = ({image,title,designation}) => {
             className="w-full object-center object-cover"
             src={image}
             fill
-            alt={title}/>
+            alt={title}
+            priority={true}
+            />
             </div>
             <h1 className="font-allenoire text-sm sm:text-base">
                 {title}

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import SectionDivision from "./ui/SectionDivision";
+import { useState } from 'react';
 import Swal from 'sweetalert2';
+import SectionDivision from "./ui/SectionDivision";
 
 const FillOnline = () => {
   const [formData, setFormData] = useState({

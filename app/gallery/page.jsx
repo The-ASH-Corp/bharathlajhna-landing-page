@@ -14,7 +14,7 @@ const Gallery = () => {
           alt="Gallery hero"
           src={"/assets/images/gallery/gallery-img-1.png"}
           fill
-          priority
+          priority={true}
           sizes="100vw"
           quality={85}
           className="w-full absolute top-0 left-0 object-cover object-center"

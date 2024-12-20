@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Title from "./ui/Title";
-import Image from "next/image";
-import useStrapi from "@/hooks/useStrapi";
 import { SERVICE_QUERY } from "@/constants/strapiQueries";
+import useStrapi from "@/hooks/useStrapi";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import Title from "./ui/Title";
 
 const ServiceClient = () => {
   const [serviceData, setServiceData] = useState([]);

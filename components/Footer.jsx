@@ -1,11 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaWhatsapp } from "react-icons/fa6";
 import FancyButton from "./ui/FancyButton";
 import Title from "./ui/Title";
-import { FaFacebook, FaWhatsapp } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -16,6 +14,7 @@ const Footer = () => {
             src={"/assets/icons/pattern-footer.svg"}
             alt="footer pattern"
             fill
+            priority={true}
             className="object-contain w-full object-center"
           />
         </div>
@@ -25,6 +24,7 @@ const Footer = () => {
             src={"/assets/icons/pattern-footer.svg"}
             alt="footer pattern"
             fill
+            priority={true}
             className="object-contain w-full object-center scale-x-[-1]"
           />
         </div>
@@ -113,6 +113,7 @@ const Footer = () => {
                     alt="footer logo"
                     width={150}
                     height={150}
+                    priority={true}
                     // fill
                     className="object-contain "
                   />
@@ -143,6 +144,7 @@ const Footer = () => {
                     width={150}
                     height={150}
                     // fill
+                    priority={true}
                     className="object-contain "
                   />
                 <p>

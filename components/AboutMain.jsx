@@ -1,13 +1,12 @@
 'use client'
 
+import { ABOUT_QUERY } from "@/constants/strapiQueries";
+import useStrapi from "@/hooks/useStrapi";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import Title from "./ui/Title";
+import TeamAbout from "./TeamAbout";
 import AboutCard from "./ui/AboutCard";
 import AboutCard2 from "./ui/AboutCard2";
-import TeamAbout from "./TeamAbout";
-import useStrapi from "@/hooks/useStrapi";
-import { ABOUT_QUERY } from "@/constants/strapiQueries";
+import Title from "./ui/Title";
 
 
 const AboutMain = () => {
@@ -59,7 +58,7 @@ const AboutMain = () => {
           alt="BLM"
           src="/assets/images/about-img-1.jpg"
           fill
-          priority
+          priority={true}
           sizes="100vw"
           quality={85}
           className="w-full absolute top-0 left-0 object-cover object-center"
@@ -99,6 +98,7 @@ const AboutMain = () => {
                     alt="icons"
                     width={15}
                     height={15}
+                    priority={true}
                   />
                   {data}
                 </li>
@@ -119,6 +119,7 @@ const AboutMain = () => {
                       alt="icons"
                       width={15}
                       height={15}
+                      priority={true}
                     />
                     {data}
                   </li>

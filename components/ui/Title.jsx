@@ -8,6 +8,7 @@ const Title = ({ children,className }) => {
         <h1 className={`relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px] ${ className }`}>
               { children }
               <Image
+              priority={true}
                 src={"/assets/icons/text-decoration-pattern.svg"}
                 alt="text decoration pattern"
                 width={100}

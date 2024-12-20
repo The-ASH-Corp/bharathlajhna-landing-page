@@ -1,9 +1,9 @@
 "use client";
 
-import NewsCard from "./ui/NewsCard";
-import React, { useEffect, useState } from "react";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
+import { useEffect, useState } from "react";
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import NewsCard from "./ui/NewsCard";
 
 import "swiper/css";
 import "swiper/css/navigation";

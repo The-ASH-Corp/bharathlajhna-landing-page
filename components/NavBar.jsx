@@ -1,13 +1,13 @@
 "use client";
 
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { FaChevronDown, FaFacebook, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
-import Button from "./ui/Button";
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import classNames from "classnames";
+import { useEffect, useState } from "react";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
+import Button from "./ui/Button";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -53,7 +53,7 @@ const NavBar = () => {
           alt="Logo"
           width={100}
           height={100}
-          priority
+          priority={true}
         />
       </Link>
 

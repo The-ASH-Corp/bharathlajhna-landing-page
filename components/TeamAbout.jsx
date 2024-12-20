@@ -1,14 +1,14 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
-import Title from "./ui/Title";
-import AboutTeamCard from "./ui/AboutTeamCard";
-import Button from "./ui/Button";
+import { ABOUT_QUERY } from "@/constants/strapiQueries";
+import useStrapi from "@/hooks/useStrapi";
+import { useEffect, useState } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 import AboutTeamCarousel from "./AboutTeamCarousel";
-import useStrapi from "@/hooks/useStrapi";
-import { ABOUT_QUERY } from "@/constants/strapiQueries";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import AboutTeamCard from "./ui/AboutTeamCard";
+import Button from "./ui/Button";
+import Title from "./ui/Title";
 
 
 const TeamAbout = () => {

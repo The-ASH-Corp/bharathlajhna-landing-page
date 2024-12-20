@@ -46,7 +46,7 @@ const Membership = () => {
           alt="Membership hero"
           src={"/assets/images/loan-img.jpeg"}
           fill
-          priority
+          priority={true}
           sizes="100vw"
           quality={85}
           className="w-full absolute top-0 left-0 object-cover object-center"

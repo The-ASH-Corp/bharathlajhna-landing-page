@@ -1,13 +1,13 @@
 'use client';
 
-import React, { Suspense, useEffect, useState } from 'react';
-import { ImPhone } from 'react-icons/im';
-import SectionDivision from './ui/SectionDivision';
-import { IoLocationOutline } from 'react-icons/io5';
-import Image from 'next/image';
-import useStrapi from '@/hooks/useStrapi';
 import { BRANCH_QUERY } from '@/constants/strapiQueries';
+import useStrapi from '@/hooks/useStrapi';
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { ImPhone } from 'react-icons/im';
+import { IoLocationOutline } from 'react-icons/io5';
+import SectionDivision from './ui/SectionDivision';
 
 const BranchClient = () => {
   const searchParams = useSearchParams();

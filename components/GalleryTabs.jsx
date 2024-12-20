@@ -1,10 +1,9 @@
 'use client'
-import Image from "next/image";
 import { GALLERY_QUERY } from "@/constants/strapiQueries";
 import useStrapi from "@/hooks/useStrapi";
-import { Suspense, useEffect, useState } from "react";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 
 const GalleryTabs = () => {
@@ -143,6 +142,7 @@ const GalleryTabs = () => {
                   fill
                   quality={85}
                   className="w-full h-full object-cover object-center"
+                  priority={true}
                 />
               </div>
             </div>
@@ -179,6 +179,7 @@ const GalleryTabs = () => {
                   src={`https://blm-cms.appii.space${item.file.url}`}
                   fill
                   quality={85}
+                  priority={true}
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -196,6 +197,7 @@ const GalleryTabs = () => {
                   alt="Gallery"
                   src={`https://blm-cms.appii.space${item.file.url}`}
                   fill
+                  priority={true}
                   quality={85}
                   className="w-full h-full object-cover object-center"
                 />

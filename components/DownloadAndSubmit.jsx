@@ -1,12 +1,11 @@
 'use client'
 
-import Image from "next/image";
-import { GrStatusGood } from "react-icons/gr";
-import { BsDownload } from "react-icons/bs";
-import { BsUpload } from "react-icons/bs";
-import { useRef, useState } from "react";
 import { submitMemberShipForm } from "@/app/actions";
-import Swal from 'sweetalert2'
+import Image from "next/image";
+import { useRef, useState } from "react";
+import { BsDownload, BsUpload } from "react-icons/bs";
+import { GrStatusGood } from "react-icons/gr";
+import Swal from 'sweetalert2';
 
 const DownloadAndSubmit = () => {
   const [ file, setFile ] = useState("")
@@ -113,6 +112,7 @@ const DownloadAndSubmit = () => {
                 alt="paattern"
                 fill
                 quality={85}
+                priority={true}
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -135,6 +135,7 @@ const DownloadAndSubmit = () => {
                 alt="paattern"
                 fill
                 quality={85}
+                priority={true}
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -169,6 +170,7 @@ const DownloadAndSubmit = () => {
                 src={"/assets/icons/pattern.svg"}
                 alt="paattern"
                 fill
+                priority={true}
                 quality={85}
                 className="w-full h-full object-cover object-center"
               />

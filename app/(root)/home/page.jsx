@@ -32,7 +32,7 @@ const Home = () => {
   const [ testimonialData, setTestimonialData ] = useState([])
   const [  newsData, setNewsData ] = useState([])
   const [  videoData, setVideoData ] = useState([])
-  const projectTitle = ["Kerala", "Tamil Nadu", "Pondicherry"]
+
 
   const {data,loading, error} = useStrapi("/api/home-page",HOMEPAGE_QUERY)
   const router = useRouter()
@@ -116,6 +116,7 @@ const Home = () => {
                 height: "auto",
               }}
               className="mix-blend-soft-light"
+              priority={true}
             />
           </div>
           <p className="font-poppins text-center mt-[14px] text-[12px] font-[300] w-[320px] leading-5 sm:text-[19px] sm:leading-8 sm:w-[auto] lg:text-[22px] lg:leading-10 lg:max-w-[1100px]">
@@ -128,6 +129,7 @@ const Home = () => {
               alt=" pattern "
               fill
               className="absolute top-0 left-0 object-cover"
+              priority={true}
             />
           </div>
 
@@ -137,6 +139,7 @@ const Home = () => {
               alt=" pattern "
               fill
               className="absolute top-0 left-0 scale-x-[-1] object-cover"
+              priority={true}
             />
           </div>
         </section>
@@ -201,6 +204,7 @@ const Home = () => {
               style={{
                 objectPosition: "50% 16%",
               }}
+              priority={true}
             />
           </div>
         </section>

@@ -1,8 +1,8 @@
 'use client'
 
+import Image from "next/image"
 import { useState } from "react"
 import Button from "./ui/Button"
-import Image from "next/image"
 
 
 const InquiryCard = () => {
@@ -37,6 +37,7 @@ const InquiryCard = () => {
             src={" /assets/icons/pattern.svg"}
             alt="Ui Pattern"
             fill
+            priority={true}
             className="object-contain w-full object-center"/>
           </div>
 
@@ -45,6 +46,7 @@ const InquiryCard = () => {
             src={" /assets/icons/pattern.svg"}
             alt="Ui Pattern"
             fill
+            priority={true}
             className="object-contain w-full object-center scale-x-[-1]"/>
           </div>
 
