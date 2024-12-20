@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SectionDivision from "./ui/SectionDivision";
+import Swal from 'sweetalert2';
 
 const FillOnline = () => {
   const [formData, setFormData] = useState({
@@ -52,7 +53,17 @@ const FillOnline = () => {
     const missingFields = requiredFields.filter((field) => !formData[field]);
 
     if (missingFields.length > 0) {
-      alert(`Please fill in the following required fields:\n${missingFields.join(', ')}`);
+      // alert(`Please fill in the following required fields:\n${missingFields.join(', ')}`);
+
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: `Please fill in the following required fields:\n${missingFields.join(', ')}`,
+        customClass:{
+          popup:"swal-container",
+          confirmButton:"swal-button-warning",
+        }
+      })
       return;
     }
 

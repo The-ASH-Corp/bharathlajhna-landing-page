@@ -42,6 +42,16 @@ body {
   cursor: pointer;        
 }
 
+.swal-button-warning {
+  background-color: #ffeeee; 
+  color: black;           
+  font-size: 16px;        
+  padding: 5px 20px;       
+  border-radius: 0px;       
+  border: 2px dotted gray;             
+  cursor: pointer;        
+}
+
 .swal-container {
   border-radius: 0px;       
 }
