@@ -26,9 +26,9 @@ const NavBar = () => {
   const navLinks = [
     { href: "/home", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/branch", label: "Our Branches" },
+    { href: "/branch", label: "Branches" },
     { href: "/service", label: "Service" },
-    { href: "/projects", label: "Our Projects" },
+    { href: "/projects", label: "Projects" },
     { href: "/gallery", label: "Gallery" },
     { href: "/loans", label: "Loans" },
   ];
@@ -43,7 +43,7 @@ const NavBar = () => {
     <nav
       className={classNames(
         "fixed top-0 z-[100] flex items-center justify-between w-full px-3 py-4 transition-all duration-300 ",
-        scrolled && "backdrop-blur-[6px] backdrop-saturate-[180%] bg-black/30"
+        scrolled && "backdrop-blur-[6px]  bg-gradient-to-b from-black/70 to-transparent border-none"
       )}
     >
       {/* Logo */}
@@ -58,20 +58,27 @@ const NavBar = () => {
       </Link>
 
       {/* Desktop Navigation */}
-      <ul className="hidden md:flex items-center gap-3 lg:gap-9 text-white font-poppins font-light my-2">
+      <ul className="hidden md:flex items-center gap-3 lg:gap-9 font-poppins my-2 bg-white px-5 py-2 rounded-[50px] mx-2 border shadow-sm">
         {navLinks.map(({ href, label }) => (
-          <li key={href}>
+          <li key={href} className="relative">
             <Link
               href={href}
               className={classNames(
-                pathname === href ? "text-white border-b border-white" : ""
+                "pb-1 relative inline-block" // Base styles
               )}
             >
               {label}
+              <span
+                className={classNames(
+                  "absolute left-0 bottom-0 h-[2px] bg-yellow-300 transition-all duration-500 ease-in-out",
+                  pathname === href ? "w-full" : "w-0"
+                )}
+              ></span>
             </Link>
           </li>
         ))}
       </ul>
+
 
 
       {/* Buttons */}
