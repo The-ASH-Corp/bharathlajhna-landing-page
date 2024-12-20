@@ -1,6 +1,4 @@
-import Footer from "@/components/Footer"
 import InquiryCard from "@/components/InquiryCard"
-import NavBar from "@/components/NavBar"
 import ServiceClient from "@/components/ServiceClient"
 import SectionDivision from "@/components/ui/SectionDivision"
 import Title from "@/components/ui/Title"

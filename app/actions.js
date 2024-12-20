@@ -1,5 +1,5 @@
 'use server' 
-import nodemailer from "nodemailer"
+import nodemailer from "nodemailer";
 
 export async function submitMemberShipForm(file) {
     const fileBuffer = Buffer.from(await file.arrayBuffer());

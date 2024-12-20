@@ -1,12 +1,8 @@
-import Footer from "@/components/Footer";
 import InquiryCard from "@/components/InquiryCard";
-import NavBar from "@/components/NavBar";
+import ProjectTabs from "@/components/ProjectTabs";
 import SectionDivision from "@/components/ui/SectionDivision";
 import Title from "@/components/ui/Title";
 import Image from "next/image";
-import { FaBuilding } from "react-icons/fa6";
-import { MdLocationOn } from "react-icons/md";
-import ProjectTabs from "@/components/ProjectTabs";
 
 export const metadata = {
   title: "BLM - Projects",

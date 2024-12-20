@@ -68,7 +68,7 @@ const AboutMain = () => {
       <section className="p-6 py-10 flex flex-col justify-center items-center gap-10">
         <main className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
           <Title>About us</Title>
-          <p className="font-poppins text-para_color text-sm">
+          <p className="font-poppins text-para_color text-sm text-justify">
             {data?.data?.description !== null &&
             data?.data?.description.length > 0
               ? data?.data?.description
@@ -131,7 +131,7 @@ const AboutMain = () => {
           <AboutCard2
             bgColor={"#CADFDA"}
             icon={"/assets/icons/about-card2-icon-1.svg"}
-            title={"our vision"}
+            title={"Our Vision"}
             description={
               '"Home For All" empowers performance and unlocks potential, creating an environment where everyone thrives and achieves their best. Join us in fostering growth and maximizing success.'
             }
@@ -141,9 +141,9 @@ const AboutMain = () => {
           <AboutCard2
             bgColor={"#CA943A33"}
             icon={"/assets/icons/about-card2-icon-2.svg"}
-            title={"our vision"}
+            title={"Our Mission"}
             description={
-              '"Home For All" empowers performance and unlocks potential, creating an environment where everyone thrives and achieves their best. Join us in fostering growth and maximizing success.'
+              'Eradicate poverty and provide food and shelter for all by drawing strength from ability.'
             }
             textColor={"#CA943A"}
           />

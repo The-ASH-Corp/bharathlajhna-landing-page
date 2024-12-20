@@ -1,9 +1,7 @@
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
-import Title from "@/components/ui/Title";
 import InquiryCard from "@/components/InquiryCard";
-import Image from "next/image";
 import SectionDivision from "@/components/ui/SectionDivision";
+import Title from "@/components/ui/Title";
+import Image from "next/image";
 
 
 
@@ -29,8 +27,8 @@ const Loans = () => {
         />
       </main>
 
-      <main className="flex flex-col items-center justify-center w-full mb-10 lg:mb-20">
-        <section className="flex flex-col items-start justify-start p-6 lg:w-[1290px]">
+      <main className="flex flex-col  justify-center w-full mb-10 lg:mb-20">
+        <section className=" p-6 ">
           <Title>Loans</Title>
           <p className="font-poppins text-sm text-para_color mt-2">
             &quot;Browse through our curated gallery of moments and milestones.
@@ -40,7 +38,7 @@ const Loans = () => {
 
         <SectionDivision/>
 
-        <section className="flex flex-col items-center justify-center p-6 lg:max-w-[1290px] lg:flex-row lg:gap-5 lg:my-16">
+        <section className=" flex flex-col  justify-center p-6 lg:max-w-[1290px] lg:flex-row lg:gap-5 lg:my-16 mx-auto">
           <div className="relative w-full h-48 lg:h-96 lg:w-1/2">
             <Image
             alt="loans"
@@ -49,9 +47,9 @@ const Loans = () => {
             quality={85}
             className="w-full h-full object-cover object-center"/>
           </div>
-          <div className="mt-10 lg:w-1/2">
+          <div className=" lg:w-1/2">
             <Title>Property Loans</Title>
-            <p className="font-poppins text-sm text-para_color mt-2 pb-6">
+            <p className="font-poppins text-xl text-para_color mt-2 pb-6">
               Now you can meet your property needs with BLM’s property loan.
               With our property loan, you may finally buy the property of your
               dreams. Property loan is a mortgage loan provided by BLM that
@@ -65,7 +63,7 @@ const Loans = () => {
         </section>
 
         <SectionDivision/>
-        <section className="w-full flex flex-col items-start justify-start p-6 lg:max-w-[1290px] mt-20 mb-10">
+        <section className="w-full flex flex-col items-start justify-start p-6 lg:max-w-[1290px] mt-20 mb-10 mx-auto">
           <InquiryCard />
         </section>
 

@@ -1,26 +1,24 @@
 'use client'
 
-import HeroCarousel from "@/components/HeroCarousel";
-import NavBar from "@/components/NavBar";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import Image from "next/image";
-import Title from "@/components/ui/Title";
-import Button from "@/components/ui/Button";
-import { RiArrowLeftSLine,RiArrowRightSLine } from "react-icons/ri";
-import ServiceCarousel from "@/components/ServiceCarousel";
-import ProjectCarousel from "@/components/ProjectCarousel";
-import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
-import TestimonialCarousel from "@/components/TestimonialCarousel";
-import SectionDivision from "@/components/ui/SectionDivision";
-import NewsCarousel from "@/components/NewsCarousel";
-import Footer from "@/components/Footer";
+import HeroCarousel from "@/components/HeroCarousel";
 import InquiryCard from "@/components/InquiryCard";
-import { useEffect, useState } from "react";
-import useStrapi from "@/hooks/useStrapi";
+import NewsCarousel from "@/components/NewsCarousel";
+import ProjectCarousel from "@/components/ProjectCarousel";
+import ServiceCarousel from "@/components/ServiceCarousel";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import Button from "@/components/ui/Button";
+import SectionDivision from "@/components/ui/SectionDivision";
+import Title from "@/components/ui/Title";
 import { HOMEPAGE_QUERY } from "@/constants/strapiQueries";
+import useStrapi from "@/hooks/useStrapi";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { useRouter } from 'next/navigation'
+import { BsArrowRight } from "react-icons/bs";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 
 
 
@@ -105,7 +103,7 @@ const Home = () => {
       <main className="bg-primary_color text-white w-full">
         <section className="relative w-full flex flex-col items-center justify-center p-7 py-32 sm:px-14 lg:py-52">
           <h1 className="font-allenoire text-[22px] sm:text-[38px] lg:text-[58px]">
-            welcome to BLM
+            Welcome to BLM
           </h1>
           <div>
             <Image
@@ -121,11 +119,7 @@ const Home = () => {
             />
           </div>
           <p className="font-poppins text-center mt-[14px] text-[12px] font-[300] w-[320px] leading-5 sm:text-[19px] sm:leading-8 sm:w-[auto] lg:text-[22px] lg:leading-10 lg:max-w-[1100px]">
-            We are a self-governing group of individuals who work together as
-            members of a jointly owned business in South India to achieve our
-            common social and cultural needs and objectives. Our primary goal is
-            to raise the members of our BLM family by offering services, jobs,
-            and other opportunities.
+          At BLM, we specialize in creating exceptional spaces that blend modern luxury with timeless design. Our passion lies in crafting homes and projects that reflect your style, meet your needs, and exceed expectations. With a focus on quality, innovation, and precision, we bring your vision to life. Thank you for choosing BLM – where dreams take shape and excellence is a standard. Let’s create something extraordinary together!
           </p>
 
           <div className="absolute top-0 left-0 w-[100px] h-[100px] sm:w-[160px] sm:h-[160px] lg:w-[270px] lg:h-[270px]">

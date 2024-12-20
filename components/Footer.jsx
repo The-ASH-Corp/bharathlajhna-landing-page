@@ -1,7 +1,7 @@
 import Image from "next/image";
 import FancyButton from "./ui/FancyButton";
 import Title from "./ui/Title";
-import { FaFacebook } from "react-icons/fa6";
+import { FaFacebook, FaWhatsapp } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -10,7 +10,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <div className="relative w-full flex flex-col sm:gap-[15px] items-center justify-center bg-[#F1F1F1] pt-[130px] sm:pt-[90px] mt-10">
+      <div className="relative w-full flex flex-col sm:gap-[15px] items-center justify-center bg-[#F1F1F1] pt-[130px] sm:pt-[90px] mt-10 overflow-hidden">
         <div className="absolute top-0 right-0 w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] lg:w-[250px] lg:h-[250px]">
           <Image
             src={"/assets/icons/pattern-footer.svg"}
@@ -35,7 +35,7 @@ const Footer = () => {
               We are available in multiple states
             </Title>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-wrap justify-center">
             <Link href={"/branch?tab=kerala"} >
              <FancyButton name={"KERALA"}  />
             </Link>
@@ -48,36 +48,49 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full flex flex-col justify-end sm:flex-row sm:justify-start gap-7 sm:gap-2 mt-10 font-poppins px-8">
+        <div className="w-full flex flex-col justify-end sm:flex-row sm:justify-start gap-7 sm:gap-2 mt-10 font-poppins px-8 md:text-[15px] lg:text-[18px]">
           <div className="w-full flex justify-between">
             <div className="sm:w-full flex flex-col gap-8 sm:flex-row sm:gap-10 lg:gap-32 sm:justify-around sm:items-start">
               <div>
-                <h1 className="text-[10px] sm:text-[12px] text-black opacity-50 mb-2">
+                <h1 className=" text-black opacity-50 mb-2">
                   HOUSING PROJECT
                 </h1>
-                <ul className="text-[12px] sm:text-[14px] flex flex-col gap-2">
-                  <li>On Going</li>
-                  <li>Completed</li>
-                  <li>Up Coming</li>
+                <ul className=" flex flex-col gap-2 lg:leading-9">
+                  <li><Link href={"/projects"}>
+                  Ongoing
+                  </Link></li>
+
+                  <li>
+                    <Link href={"/projects"}>
+                    Completed
+                    </Link>
+                    </li>
+
+                  <li> <Link href={"/projects"}>
+                  
+                  Up Coming
+                  </Link>
+                  </li>
                 </ul>
               </div>
               <div>
-                <h1 className="text-[10px] sm:text-[12px] text-black opacity-50 mb-2">
+                <h1 className="  text-black opacity-50 mb-2">
                   SERVICES
                 </h1>
-                <ul className="text-[12px] sm:text-[14px] flex flex-col gap-2">
-                  <li>Land Development</li>
-                  <li>Housing Development</li>
-                  <li>BLM Transport</li>
-                  <li>Civil Supplies</li>
-                  <li>BLM Jewellery</li>
+                <ul className="  flex flex-col gap-2 lg:leading-9">
+                  
+                  <Link href={"/services"}>Land Development</Link>
+                  <Link href={"/services"}>Housing Development</Link>
+                  <Link href={"/services"}>BLM Transport</Link>
+                  <Link href={"/services"}>Civil SuppLinkes</Link>
+                  <Link href={"/services"}>BLM Jewellery</Link>
                 </ul>
               </div>
               <div>
-                <h1 className="text-[10px] sm:text-[12px] text-black opacity-50 mb-2">
+                <h1 className="  text-black opacity-50 mb-2">
                   CONTACT US
                 </h1>
-                <ul className="text-[12px] sm:text-[14px] flex flex-col gap-2">
+                <ul className="  flex flex-col gap-2 lg:leading-9">
                   <li className="flex">
                     Phone :{" "}
                     <p className="flex flex-col">
@@ -94,55 +107,65 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="hidden sm:block">
-                <div className="relative w-[100px] h-[120px] lg:w-[200px] lg:h-[200px]">
+                <div className="w-[200px] text-start flex flex-col items-center mb-3">
                   <Image
                     src={"/assets/images/footer-logo.png"}
                     alt="footer logo"
-                    fill
-                    className="object-contain w-full"
+                    width={150}
+                    height={150}
+                    // fill
+                    className="object-contain "
                   />
+                <p >
+                We are an autonomous association of people united as members to meet our common social and cultural needs.
+                </p>
                 </div>
-                <div className="w-full flex justify-center gap-3 lg:gap-6 text-[#454545] sm:text-lg lg:text-2xl">
-                  <a href="#">
+                <div className="w-full flex  gap-3 lg:gap-6 text-[#454545] sm:text-2xl lg:text-2xl">
+                  <Link href="https://www.facebook.com/bharathlajhnasociety?mibextid=LQQJ4d">
                     <FaFacebook />
-                  </a>
-                  <a href="#">
-                    <FaLinkedin />
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="https://wa.me/9597775333">
+                    <FaWhatsapp />
+                  </Link>
+                  <Link href="https://youtube.com/@bharathlajhnamultistateco-3613">
                     <FaYoutube />
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link href="https://instagram.com/bharathlajhnasociety?igshid=MjAxZDBhZDhlNA">
                     <FaInstagram />
-                  </a>
+                  </Link>
                 </div>
               </div>
+            <div className=" sm:mt-0 sm:hidden">
+            <div className="w-[200px] text-start flex flex-col items-center ">
+                  <Image
+                    src={"/assets/images/footer-logo.png"}
+                    alt="footer logo"
+                    width={150}
+                    height={150}
+                    // fill
+                    className="object-contain "
+                  />
+                <p>
+                We are an autonomous association of people united as members to meet our common social and cultural needs.
+                </p>
+                </div>
+              <div className="w-full flex  gap-3 lg:gap-6 text-[#454545] sm:text-3xl lg:text-2xl">
+              <Link href="https://www.facebook.com/bharathlajhnasociety?mibextid=LQQJ4d">
+                    <FaFacebook />
+                  </Link>
+                  <Link href="https://wa.me/9597775333">
+                    <FaWhatsapp />
+                  </Link>
+                  <Link href="https://youtube.com/@bharathlajhnamultistateco-3613">
+                    <FaYoutube />
+                  </Link>
+                  <Link href="https://instagram.com/bharathlajhnasociety?igshid=MjAxZDBhZDhlNA">
+                    <FaInstagram />
+                  </Link>
+              </div>
+            </div>
             </div>
 
-            <div className="mt-80 sm:mt-0 sm:hidden">
-              <div className="relative w-[100px] h-[120px] lg:w-[200px] lg:h-[200px]">
-                <Image
-                  src={"/assets/images/footer-logo.png"}
-                  alt="footer logo"
-                  fill
-                  className="object-contain w-full"
-                />
-              </div>
-              <div className="w-full flex justify-center gap-3 lg:gap-6 text-[#454545] sm:text-lg lg:text-2xl">
-                <a href="#">
-                  <FaFacebook />
-                </a>
-                <a href="#">
-                  <FaLinkedin />
-                </a>
-                <a href="#">
-                  <FaYoutube />
-                </a>
-                <a href="#">
-                  <FaInstagram />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 

@@ -1,10 +1,8 @@
-import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
+import BranchClient from "@/components/BranchClient";
+import InquiryCard from "@/components/InquiryCard";
 import SectionDivision from "@/components/ui/SectionDivision";
 import Title from "@/components/ui/Title";
 import Image from "next/image";
-import InquiryCard from "@/components/InquiryCard";
-import BranchClient from "@/components/BranchClient";
 
 export const metadata = {
   title: "BLM - Branch",

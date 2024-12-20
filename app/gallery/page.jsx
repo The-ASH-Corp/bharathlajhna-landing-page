@@ -1,9 +1,7 @@
-import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
+import GalleryTabs from "@/components/GalleryTabs";
 import SectionDivision from "@/components/ui/SectionDivision";
 import Title from "@/components/ui/Title";
 import Image from "next/image";
-import GalleryTabs from "@/components/GalleryTabs";
 
 const Gallery = () => {
 
