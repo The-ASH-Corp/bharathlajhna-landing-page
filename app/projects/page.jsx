@@ -16,7 +16,7 @@ const Projects = () => {
 
   return (
     <>
-      <NavBar />
+    
 
       <main className="relative w-full h-[80vh]">
         <Image
@@ -50,7 +50,7 @@ const Projects = () => {
           <InquiryCard />
         </section>
       </main>
-      <Footer />
+     
     </>
   );
 };

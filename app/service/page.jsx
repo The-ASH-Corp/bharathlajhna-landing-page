@@ -16,7 +16,7 @@ const Service = () => {
 
   return (
     <>
-      <NavBar />
+      
 
       <main className="relative w-full h-[80vh]">
         <Image
@@ -51,7 +51,7 @@ const Service = () => {
       </section>
       </main>
 
-      <Footer />
+     
     </>
   );
 }

@@ -9,9 +9,9 @@ export const metadata = {
 const AboutUs = () => {
   return (
     <>
-      <NavBar />
+    
       <AboutMain />
-      <Footer />
+      
     </>
   );
 };

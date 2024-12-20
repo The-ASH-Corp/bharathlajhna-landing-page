@@ -9,7 +9,7 @@ const Gallery = () => {
 
   return (
     <>
-      <NavBar />
+    
       <main className="relative w-full h-[80vh]">
         <Image
           alt="Gallery hero"
@@ -35,7 +35,7 @@ const Gallery = () => {
 <GalleryTabs/>
 
       </main>
-      <Footer />
+     
     </>
   );
 };

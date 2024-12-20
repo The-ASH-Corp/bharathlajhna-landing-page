@@ -15,7 +15,7 @@ const Branch = () => {
 
   return (
     <>
-      <NavBar />
+      
 
       <main className="relative w-full h-[80vh]">
         <Image
@@ -49,7 +49,7 @@ const Branch = () => {
           <InquiryCard />
         </section>
       </main>
-      <Footer />
+     
     </>
   );
 };

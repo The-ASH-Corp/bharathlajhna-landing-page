@@ -17,7 +17,7 @@ const Membership = () => {
 
   return (
     <>
-      <NavBar />
+     
 
       <main className="relative w-full h-[80vh]">
         <Image
@@ -71,7 +71,7 @@ const Membership = () => {
         </section>
       </main>
 
-      <Footer />
+  
     </>
   );
 }

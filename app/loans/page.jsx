@@ -15,7 +15,7 @@ export const metadata = {
 const Loans = () => {
   return (
     <>
-      <NavBar />
+    
 
       <main className="relative w-full h-[80vh]">
         <Image
@@ -72,7 +72,7 @@ const Loans = () => {
       </main>
 
 
-      <Footer />
+     
     </>
   );
 }

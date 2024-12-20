@@ -62,7 +62,7 @@ const Home = () => {
 
   return (
     <>
-      <NavBar />
+    
       {loading ? (
         <main className="relative w-full flex flex-col items-center justify-center h-screen">
           <AiOutlineLoading3Quarters className="animate-spin text-gray-500 text-7xl" />
@@ -625,9 +625,7 @@ const Home = () => {
 
       {/* Footer Section */}
 
-      <footer>
-        <Footer />
-      </footer>
+     
     </>
   );
 };
