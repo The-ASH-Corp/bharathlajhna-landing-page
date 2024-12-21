@@ -103,9 +103,9 @@ const FillOnline = () => {
     <>
       <main className='w-full text-center'>
         <form onSubmit={handleSubmit} >
-          <h1 className="font-poppins text-black text-base mb-4">
+          <p className="font-poppins text-black text-base mb-4">
             Application for Admission as a member
-          </h1>
+          </p>
 
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -146,9 +146,9 @@ const FillOnline = () => {
           <SectionDivision />
 
           <div className="mb-6">
-            <h1 className="font-poppins text-black text-base mb-4 mt-6">
+            <p className="font-poppins text-black text-base mb-4 mt-6">
               Previous Membership Details
-            </h1>
+            </p>
             <div className="flex flex-col sm:grid sm:grid-cols-3 gap-3">
               {renderInput('previousMembershipDate', 'date', 'Previous Membership Date')}
               {renderInput('membershipNumber', 'text', 'Membership Number')}
@@ -181,7 +181,7 @@ const FillOnline = () => {
           <SectionDivision />
 
           <div className="flex flex-col gap-4 ">
-            <h1 className="font-poppins text-black text-base mb-4 mt-6">Witness Details</h1>
+            <p className="font-poppins text-black text-base mb-4 mt-6">Witness Details</p>
             {[1, 2].map((num) => (
               <div key={num} className="flex flex-col gap-3 sm:flex-row">
                 {renderInput(`witness${num}Date`, 'date', `Witness ${num} Date`)}

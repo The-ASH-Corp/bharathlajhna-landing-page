@@ -14,7 +14,7 @@ const AboutCard2 = ({icon,title,description,bgColor,textColor}) => {
             priority={true}
             width={160}
             height={160}/>
-            <h1 className="font-allenoire text-lg z-10 xl:text-2xl xl:mb-3" style={{color:textColor}}>{title}</h1>
+            <p className="font-allenoire text-lg z-10 xl:text-2xl xl:mb-3" style={{color:textColor}}>{title}</p>
             <p className="font-poppins text-para_color text-sm sm:text-xs z-10 xl:text-sm">{description}</p>
         </div>
     </>

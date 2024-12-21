@@ -13,7 +13,7 @@ const ProjectCard = ({ title,image,place,squareFeet }) => {
         style={{
             backgroundImage:`url('${ image }')`,
         }}>
-            <h1 className="z-10 font-allenoire text-[14px] sm:text-[21px] lg:text-[32px] text-white">{ title }</h1>
+            <p className="z-10 font-allenoire text-[14px] sm:text-[21px] lg:text-[32px] text-white">{ title }</p>
             <div className="mb-2 mt-1 z-10">
                 <p className="flex gap-[3px] text-[10px] sm:text-[11px] lg:text-[16px] font-poppins items-center justify-center text-[#828282]"><MdLocationOn size={ 12 }/> { place } <i className="w-[1px] h-[10px] bg-[#828282]"></i> <FaBuilding size={ 12 }/> { squareFeet } </p>
             </div>

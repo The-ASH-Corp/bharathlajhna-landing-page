@@ -96,9 +96,9 @@ const ServiceClient = () => {
                 </p>
               </div>
               <div className="relative w-full h-[200px] lg:w-1/2 lg:h-[400px]">
-                <h1 className="text-white text-xl absolute bottom-4 left-4 font-allenoire z-30 lg:hidden">
+                <p className="text-white text-xl absolute bottom-4 left-4 font-allenoire z-30 lg:hidden">
                   {item.title}
-                </h1>
+                </p>
                 <Image
                   src={`https://blm-cms.appii.space${item.image}`}
                   alt="Services"

@@ -52,9 +52,9 @@ const InquiryCard = () => {
 
           <div className="relative z-[1] border border-accent_color w-full h-full flex flex-col justify-center items-center gap-3">
             <div className="flex flex-col items-center justify-center w-[60%] sm:w-full">
-              <h1 className="font-allenoire text-center text-[14px] sm:text-[16px] lg:text-[30px]">
+              <p className="font-allenoire text-center text-[14px] sm:text-[16px] lg:text-[30px]">
                 Do you have any questions?
-              </h1>
+              </p>
               <p className="text-center text-[10px] lg:text-[16px] font-[300]">
                 We will provide detailed information about our services, types
                 of work, and top projects.

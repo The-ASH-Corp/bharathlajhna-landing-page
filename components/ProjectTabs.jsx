@@ -112,9 +112,9 @@ const ProjectTabs = () => {
                       backgroundImage: `url('https://blm-cms.appii.space${project.file.url}')`,
                     }}
                   >
-                    <h1 className="z-10 font-allenoire text-[14px] sm:text-[21px] lg:text-[32px] text-white">
+                    <p className="z-10 font-allenoire text-[14px] sm:text-[21px] lg:text-[32px] text-white">
                       {project.title}
-                    </h1>
+                    </p>
                     <div className="mb-2 mt-1 z-10">
                       <p className="flex gap-[3px] text-[10px] sm:text-[11pext-[16px] font-poppins items-center justify-center text-[#828282]">
                         <MdLocationOn size={12} /> {project.subtitle}{" "}

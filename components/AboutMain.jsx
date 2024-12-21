@@ -53,17 +53,7 @@ const AboutMain = () => {
 
   return (
     <>
-      <div className="relative w-full h-[80vh]">
-        <Image
-          alt="BLM"
-          src="/assets/images/about-img-1.jpg"
-          fill
-          priority={true}
-          sizes="100vw"
-          quality={85}
-          className="w-full absolute top-0 left-0 object-cover object-center"
-        />
-      </div>
+     
       <section className="p-6 py-10 flex flex-col justify-center items-center gap-10">
         <main className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
           <Title>About us</Title>

@@ -9,7 +9,6 @@ import ServiceCarousel from "@/components/ServiceCarousel";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import Button from "@/components/ui/Button";
 import SectionDivision from "@/components/ui/SectionDivision";
-import Title from "@/components/ui/Title";
 import { HOMEPAGE_QUERY } from "@/constants/strapiQueries";
 import useStrapi from "@/hooks/useStrapi";
 import Image from "next/image";
@@ -73,25 +72,25 @@ const Home = () => {
 
       <section className="flex items-center justify-center w-full py-8 sm:py-24">
         <div className="flex flex-col items-center justify-center px-7 py-1 lg:px-20">
-          <h1 className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
+          <p className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
             <AnimatedCounter endValue={10} duration={1000} /> lack+
-          </h1>
+          </p>
           <p className="text-[12px] text-center font-poppins font-[400] text-[#747474] sm:text-[18px] lg:text-[24px]">
             Members
           </p>
         </div>
         <div className="flex flex-col items-center justify-center border-l-[1px] border-r-[1px] border-[#747474] px-7 py-1 lg:px-20">
-          <h1 className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
+          <p className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
             <AnimatedCounter endValue={3} duration={1000} />+
-          </h1>
+          </p>
           <p className="text-[12px] text-center font-poppins font-[400] text-[#747474] sm:text-[18px] lg:text-[24px]">
             Stores
           </p>
         </div>
         <div className="flex flex-col items-center justify-center px-7 py-1 lg:px-20">
-          <h1 className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
+          <p className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
             <AnimatedCounter endValue={104} duration={1000} />+
-          </h1>
+          </p>
           <p className="text-[12px] text-center font-poppins font-[400] text-[#747474] sm:text-[18px] lg:text-[24px]">
             Branches
           </p>
@@ -102,9 +101,9 @@ const Home = () => {
 
       <main className="bg-primary_color text-white w-full">
         <section className="relative w-full flex flex-col items-center justify-center p-7 py-32 sm:px-14 lg:py-52">
-          <h1 className="font-allenoire text-[22px] sm:text-[38px] lg:text-[58px]">
+          <p className="font-allenoire text-[22px] sm:text-[38px] lg:text-[58px]">
             Welcome to BLM
-          </h1>
+          </p>
           <div>
             <Image
               src={"/assets/icons/underline-pattern.svg"}
@@ -150,7 +149,7 @@ const Home = () => {
       <main className="p-6 py-10 flex justify-center items-center">
         <section className="flex flex-col items-center justify-center gap-7 lg:max-w-[1400px]">
           <div className="flex flex-col justify-start items-start gap-3">
-            <Title>why BLM</Title>
+            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">why BLM</p>
             <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
               We are a self-governing group of individuals who work together as
               members of a jointly owned business in South India to achieve our
@@ -172,7 +171,7 @@ const Home = () => {
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col sm:flex-row items-start sm:items-center justify-center gap-7 w-full lg:max-w-[1400px]">
           <div className="sm:w-[50%] md:w-[50%]">
-            <Title>Chairman Says</Title>
+            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Chairman Says</p>
             <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
               It is my great pleasure to extend heartfelt greetings to one and
               all. I want to take this opportunity to thank all members, leaders
@@ -220,7 +219,7 @@ const Home = () => {
         <section className="flex flex-col items-start sm:items-center justify-center gap-7 w-full lg:max-w-[1290px]">
           <div className="flex items-center justify-between">
             <div>
-              <Title>Our Services</Title>
+              <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Our Services</p>
               <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px] sm:w-[95%] lg:w[70%]">
                 BLM Housing Cooperative Society is committed to providing
                 quality housing services to our members. We strive to exceed our
@@ -261,7 +260,7 @@ const Home = () => {
 
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
-          <Title>Our Projects</Title>
+          <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Our Projects</p>
           <div className="flex w-full justify-between">
             <div className="flex gap-6">
               <button
@@ -363,7 +362,7 @@ const Home = () => {
           <div className="w-full flex flex-col gap-3">
             <div className="flex sm:flex-row flex-col gap-3 justify-start items-start">
               <div className="sm:w-[50%]">
-                <Title>Property Loans</Title>
+                <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Property Loans</p>
                 <p className="text-[12px] sm:text-[14px] lg:text-[18px] font-poppins mt-3">
                   Now you can meet your property needs with BLM&apos;s property
                   loan. With our property loan, you may finally buy the property
@@ -406,7 +405,7 @@ const Home = () => {
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
           <div className="flex items-center justify-between sm:w-full">
             <div>
-              <Title>What They Say</Title>
+              <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">What They Say</p>
               <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px] sm:w-[95%] lg:w[70%]">
                 Hear the powerful voices and personal stories that highlight the
                 impact of the BLM movement.
@@ -445,7 +444,7 @@ const Home = () => {
 
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
-          <Title>News</Title>
+          <p className="">News</p>
           <div className="flex w-full justify-between">
             <div className="flex gap-6">
               <button
@@ -504,7 +503,7 @@ const Home = () => {
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
           <div>
-            <Title>Videos</Title>
+            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Videos</p>
           </div>
           <div className="w-full flex flex-col items-center justify-center gap-3">
             <div className="relative w-full h-[236px] sm:h-[372px] lg:h-[600px]">
