@@ -67,7 +67,7 @@ const TeamAbout = () => {
 
   return (
     <>
-      <main className="flex sm:hidden flex-col sm:flex-row items-start justify-center gap-7 w-full lg:max-w-[1290px]">
+      {/* <main className="flex sm:hidden flex-col sm:flex-row items-start justify-center gap-7 w-full lg:max-w-[1290px]">
         <div>
           <Title>Meet Our Team</Title>
           <p className="font-poppins text-sm text-para_color">
@@ -85,9 +85,9 @@ const TeamAbout = () => {
             />
           ))}
         </div>
-      </main>
+      </main> */}
 
-      <main className="hidden sm:flex w-full items-center justify-center p-6 py-10">
+      <main className="flex w-full items-center justify-center p-6 py-10">
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
           <div className="flex items-center justify-between sm:w-full">
             <div>

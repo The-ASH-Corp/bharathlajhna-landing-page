@@ -50,12 +50,12 @@ const AboutTeamCarousel = ({ teamData }) => {
         }}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 10,
           },
           768: {
             slidesPerView: Math.min(2, teamData?.length || 1),
-            spaceBetween: 30,
+            spaceBetween: 20,
           },
           1024: {
             slidesPerView: Math.min(3, teamData?.length || 1),
