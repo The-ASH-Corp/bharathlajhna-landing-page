@@ -42,7 +42,7 @@ const NavBar = () => {
   return (
     <nav
       className={classNames(
-        "fixed top-0 z-[100] flex items-center justify-between w-full px-3 py-4 transition-all duration-300 ",
+        "fixed top-0 z-[100] flex  items-end md:items-center justify-between w-full px-3 py-4 transition-all duration-300 ",
         scrolled && "backdrop-blur-[6px]  bg-gradient-to-b from-black/70 to-transparent border-none"
       )}
     >
@@ -58,19 +58,19 @@ const NavBar = () => {
       </Link>
 
       {/* Desktop Navigation */}
-      <ul className="hidden md:flex items-center gap-3 lg:gap-9 font-poppins my-2 bg-white px-5 py-2 rounded-[50px] mx-2 border shadow-sm">
+      <ul className="hidden lg:flex items-center gap-3 lg:gap-9 font-poppins my-2 bg-white px-5 pt-2 pb-1 rounded-[30px] mx-2 border shadow-sm">
         {navLinks.map(({ href, label }) => (
           <li key={href} className="relative">
             <Link
               href={href}
               className={classNames(
-                "pb-1 relative inline-block" // Base styles
+                "pb-1 relative inline-block",pathname === href && "font-semibold"
               )}
             >
               {label}
               <span
                 className={classNames(
-                  "absolute left-0 bottom-0 h-[2px] bg-yellow-300 transition-all duration-500 ease-in-out",
+                  "absolute left-0 bottom-0 h-[3px] rounded-full bg-yellow-300 transition-all duration-500 ease-in-out",
                   pathname === href ? "w-full" : "w-0"
                 )}
               ></span>
@@ -82,23 +82,39 @@ const NavBar = () => {
 
 
       {/* Buttons */}
-      <div className="flex items-center gap-3">
+      <div className=" flex justify-end flex-wrap gap-3">
+
         {/* Membership Button */}
-        <Link href="/membership" className="hidden sm:block">
+        <Link href="/careers" className="">
           <Button
             fontFamily="poppins"
-            textColor="black"
-            bgColor="white"
+            textColor="white"
+            bgColor="#00664E"
             borderRadius="50px"
             paddingX="25px"
             paddingY="10px"
+            
+          >
+            Join Us
+          </Button>
+        </Link>
+        {/* Membership Button */}
+        <Link href="/membership" className="">
+          <Button
+            fontFamily="poppins"
+            textColor="black"
+            bgColor="#FEDB02"
+            borderRadius="50px"
+            paddingX="25px"
+            paddingY="10px"
+            
           >
             Membership
           </Button>
         </Link>
 
         {/* Mobile Menu Button */}
-        <div className="block z-[110] md:hidden">
+        <div className="block z-[110] lg:hidden self-end" >
             <Button
               flexDirection="column"
               gap="10"
