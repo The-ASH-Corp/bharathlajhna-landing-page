@@ -22,7 +22,7 @@ const AboutCard = ({title, description, icon}) => {
           priority={true}
           height={40}
         />
-        <h1 className="font-allenoire text-base mb-1">{title}</h1>
+        <p className="font-allenoire text-base mb-1">{title}</p>
         <p className="font-poppins text-para_color">{description}</p>
       </main>
     </>

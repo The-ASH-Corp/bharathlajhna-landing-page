@@ -45,8 +45,8 @@ const BranchClient = () => {
   const BranchCard = ({ branch }) => (
     <div className="w-full flex flex-col p-6 gap-5 relative bg-slate-50">
       <div>
-        <h1 className="font-poppins text-sm font-semibold">{branch.district}</h1>
-        <h2 className="font-poppins text-xs text-para_color mb-3">{branch.city}</h2>
+        <p className="font-poppins text-sm font-semibold">{branch.district}</p>
+        <p className="font-poppins text-xs text-para_color mb-3">{branch.city}</p>
         <p className="font-poppins text-xs text-para_color max-w-[90%]">{branch.address}</p>
       </div>
       <div className="w-full flex gap-2">
@@ -76,12 +76,12 @@ const BranchClient = () => {
             {operationalHubs.map((hub, index) => (
               <div key={index} className="w-full flex flex-col p-6 gap-5 relative bg-slate-50">
                 <div>
-                  <h1 className="font-allenoire text-xl tracking-wider">{hub.name}</h1>
-                  <h2 className="font-poppins text-sm text-para_color">{hub.state}</h2>
+                  <p className="font-allenoire text-xl tracking-wider">{hub.name}</p>
+                  <p className="font-poppins text-sm text-para_color">{hub.state}</p>
                 </div>
                 <div>
-                  <h1 className="font-poppins text-sm font-semibold mb-1">{hub.district}</h1>
-                  <h2 className="font-poppins text-sm text-para_color max-w-[90%]">{hub.address}</h2>
+                  <p className="font-poppins text-sm font-semibold mb-1">{hub.district}</p>
+                  <p className="font-poppins text-sm text-para_color max-w-[90%]">{hub.address}</p>
                 </div>
                 <div className="w-full flex gap-2">
                   <a

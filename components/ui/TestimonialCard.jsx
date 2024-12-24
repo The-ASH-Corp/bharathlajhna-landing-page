@@ -39,9 +39,9 @@ const TestimonialCard = ({
               />
             </div>
             <div>
-              <h1 className="text-[12px] lg:text-[14px] font-poppins font-[600] text-black">
+              <p className="text-[12px] lg:text-[14px] font-poppins font-[600] text-black">
                 {clientName}
-              </h1>
+              </p>
               <p className="text-[10px] lg:text-[12px] font-poppins text-[#717171]">
                 {clientDesignation}
               </p>

@@ -2,6 +2,7 @@ import InquiryCard from "@/components/InquiryCard";
 import SectionDivision from "@/components/ui/SectionDivision";
 import Title from "@/components/ui/Title";
 import Image from "next/image";
+import { Suspense } from "react";
 
 
 
@@ -12,7 +13,7 @@ export const metadata = {
 
 const Loans = () => {
   return (
-    <>
+    <Suspense>
     
 
       <main className="relative w-full h-[80vh]">
@@ -27,8 +28,8 @@ const Loans = () => {
         />
       </main>
 
-      <main className="flex flex-col  justify-center w-full mb-10 lg:mb-20">
-        <section className=" p-6 ">
+      <main className="flex flex-col items-center justify-center w-full mb-10 lg:mb-20">
+        <section className="flex flex-col items-start justify-start w-full p-6 xl:max-w-[1290px]">
           <Title>Loans</Title>
           <p className="font-poppins text-sm text-para_color mt-2">
             &quot;Browse through our curated gallery of moments and milestones.
@@ -71,7 +72,7 @@ const Loans = () => {
 
 
      
-    </>
+    </Suspense>
   );
 }
 

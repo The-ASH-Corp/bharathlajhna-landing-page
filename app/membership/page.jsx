@@ -95,9 +95,9 @@ const Membership = () => {
 <section className="px-7 sm:px-12 max-w-[1400px]">
       <main className="w-full mt-10">
         <div className="flex flex-col justify-start items-start gap-3">
-          <h1 className="font-allenoire text-xl lg:text-2xl">
+          <p className="font-allenoire text-xl lg:text-2xl">
             Eligibility Criteria to Become a Member
-          </h1>
+          </p>
           <p className="font-poppins text-sm text-para_color lg:text-base">
             Any person who resides within the area of operation of the society,
             who genuinely needs the services provided by the society, and whose
@@ -121,7 +121,7 @@ const Membership = () => {
 
       <main className="w-full mt-10">
         <div className="flex flex-col justify-start items-start gap-3">
-          <h1 className="font-allenoire text-xl lg:text-2xl">Application</h1>
+          <p className="font-allenoire text-xl lg:text-2xl">Application</p>
           <p className="font-poppins text-sm text-para_color lg:text-base mb-2">
             The application for membership of the society shall be submitted by
             the applicant to the Manager of the society in the prescribed form,
@@ -140,9 +140,9 @@ const Membership = () => {
 
           <div className="w-full grid md:grid-cols-2 gap-3 mt-7">
             <div className="bg-[#F0F0F0] p-3 lg:p-6">
-              <h1 className="font-allenoire text-xl lg:text-2xl mb-2">
+              <p className="font-allenoire text-xl lg:text-2xl mb-2">
                 Cessation of Membership
-              </h1>
+              </p>
               <p className="font-poppins text-sm text-para_color lg:text-base">
                 The Membership Of The Cooperative Society May Cease In Case Of:
               </p>
@@ -158,9 +158,9 @@ const Membership = () => {
             </div>
 
             <div className="bg-[#F0F0F0] p-3 lg:p-6 ">
-              <h1 className="font-allenoire text-xl lg:text-2xl mb-2">
+              <p className="font-allenoire text-xl lg:text-2xl mb-2">
               Nominal/Associate Members
-              </h1>
+              </p>
               <p className="font-poppins text-sm text-para_color lg:text-base mb-4">
                 {nominalAssocoationMemberPoints.subTitle}
               </p>

@@ -5,10 +5,10 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "BLM - Home",
-  description: "Ashcorp Technologies Machine Test",
+  description: "Bharath Lajhna Multistate Housing Co-operative Society Ltd Received ... Copyright © 2023 bharathlajhna.com All rights Reserved, | Designed By Noviindus.",
   icons:{
     icon:"/assets/icons/favicon.png"
-  }
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -52,9 +52,9 @@ const Footer = () => {
           <div className="w-full flex justify-between">
             <div className="sm:w-full flex flex-col gap-8 sm:flex-row sm:gap-10 lg:gap-32 sm:justify-around sm:items-start">
               <div>
-                <h1 className=" text-black opacity-50 mb-2">
+                <p className=" text-black opacity-50 mb-2">
                   HOUSING PROJECT
-                </h1>
+                </p>
                 <ul className=" flex flex-col gap-2 lg:leading-9">
                   <li><Link href={"/projects"}>
                   Ongoing
@@ -74,9 +74,9 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h1 className="  text-black opacity-50 mb-2">
+                <p className="  text-black opacity-50 mb-2">
                   SERVICES
-                </h1>
+                </p>
                 <ul className="  flex flex-col gap-2 lg:leading-9">
                   
                   <Link href={"/services"}>Land Development</Link>
@@ -87,9 +87,9 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h1 className="  text-black opacity-50 mb-2">
+                <p className="  text-black opacity-50 mb-2">
                   CONTACT US
-                </h1>
+                </p>
                 <ul className="  flex flex-col gap-2 lg:leading-9">
                   <li className="flex">
                     Phone :{" "}

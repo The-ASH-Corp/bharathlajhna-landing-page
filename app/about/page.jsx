@@ -1,4 +1,5 @@
 import AboutMain from "@/components/AboutMain";
+import Image from "next/image";
 
 export const metadata = {
   title: "BLM - About Us",
@@ -7,7 +8,17 @@ export const metadata = {
 const AboutUs = () => {
   return (
     <>
-    
+     <div className="relative w-full h-[80vh]">
+        <Image
+          alt="BLM"
+          src="/assets/images/about-img-1.jpg"
+          fill
+          priority={true}
+          sizes="100vw"
+          quality={85}
+          className="w-full absolute top-0 left-0 object-cover object-center"
+        />
+      </div>
       <AboutMain />
       
     </>

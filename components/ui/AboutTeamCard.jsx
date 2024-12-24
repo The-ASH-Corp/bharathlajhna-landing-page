@@ -17,9 +17,9 @@ const AboutTeamCard = ({image,title,designation}) => {
             priority={true}
             />
             </div>
-            <h1 className="font-allenoire text-sm sm:text-base">
+            <p className="font-allenoire text-sm sm:text-base">
                 {title}
-            </h1>
+            </p>
             <p className="font-poppins text-xs text-accent_color">
                 {designation}
             </p>
