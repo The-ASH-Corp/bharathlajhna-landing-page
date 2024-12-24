@@ -18,6 +18,8 @@ import { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { BsArrowRight } from "react-icons/bs";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
+import VideoModal from "@/components/VideoModal";
+import { IoPlayCircleOutline } from "react-icons/io5";
 
 
 
@@ -31,6 +33,10 @@ const Home = () => {
   const [ testimonialData, setTestimonialData ] = useState([])
   const [  newsData, setNewsData ] = useState([])
   const [  videoData, setVideoData ] = useState([])
+  const [modalData, setModalData] = useState({
+    videoUrl: "",
+    isOpen: false,
+  })
 
 
   const {data,loading, error} = useStrapi("/api/home-page",HOMEPAGE_QUERY)
@@ -46,6 +52,14 @@ const Home = () => {
       setVideoData(data.data.blocks[5].videos);
     }
   }, [data]);
+
+
+  const handleVideoClick = (videoUrl) => {
+    setModalData({
+      videoUrl: videoUrl,
+      isOpen: true,
+    });
+  }
   
 
   if(error){
@@ -59,7 +73,12 @@ const Home = () => {
 
   return (
     <>
-    
+      <VideoModal
+        isOpen={modalData.isOpen}
+        videoUrl={modalData.videoUrl}
+        onClose={() => setModalData({ ...modalData, isOpen: false })}
+      />
+
       {loading ? (
         <main className="relative w-full flex flex-col items-center justify-center h-screen">
           <AiOutlineLoading3Quarters className="animate-spin text-gray-500 text-7xl" />
@@ -119,7 +138,13 @@ const Home = () => {
             />
           </div>
           <p className="font-poppins text-center mt-[14px] text-[12px] font-[300] w-[320px] leading-5 sm:text-[19px] sm:leading-8 sm:w-[auto] lg:text-[22px] lg:leading-10 lg:max-w-[1100px]">
-          At BLM, we specialize in creating exceptional spaces that blend modern luxury with timeless design. Our passion lies in crafting homes and projects that reflect your style, meet your needs, and exceed expectations. With a focus on quality, innovation, and precision, we bring your vision to life. Thank you for choosing BLM – where dreams take shape and excellence is a standard. Let’s create something extraordinary together!
+            At BLM, we specialize in creating exceptional spaces that blend
+            modern luxury with timeless design. Our passion lies in crafting
+            homes and projects that reflect your style, meet your needs, and
+            exceed expectations. With a focus on quality, innovation, and
+            precision, we bring your vision to life. Thank you for choosing BLM
+            – where dreams take shape and excellence is a standard. Let’s create
+            something extraordinary together!
           </p>
 
           <div className="absolute top-0 left-0 w-[100px] h-[100px] sm:w-[160px] sm:h-[160px] lg:w-[270px] lg:h-[270px]">
@@ -508,17 +533,32 @@ const Home = () => {
           <div className="w-full flex flex-col items-center justify-center gap-3">
             <div className="relative w-full h-[236px] sm:h-[372px] lg:h-[600px]">
               {videoData[0]?.url ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  className="w-full h-full object-cover z-3"
-                >
-                  <source
-                    src={`https://blm-cms.appii.space${videoData[0]?.url}`}
-                    type="video/mp4"
-                  />
-                </video>
+                <>
+                  <div
+                   onClick={() =>
+                    handleVideoClick(
+                      `https://blm-cms.appii.space${videoData[0]?.url}`
+                    )
+                  }
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
+                  </div>
+                  <video
+                    loop
+                    muted
+                    className="w-full h-full object-cover z-3"
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[0]?.url}`
+                      )
+                    }
+                  >
+                    <source
+                      src={`https://blm-cms.appii.space${videoData[0]?.url}`}
+                      type="video/mp4"
+                    />
+                  </video>
+                </>
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-red-500 font-medium text-sm text-center text-[12px] sm:text-[14px] lg:text-[18px] font-poppins">
                   No Data Found ...
@@ -528,11 +568,24 @@ const Home = () => {
             <div className="w-full flex items-center justify-center gap-3">
               {videoData[1]?.url ? (
                 <div className="relative w-full h-[62px] sm:h-[140px] lg:h-[224px]">
+                  <div
+                   onClick={() =>
+                    handleVideoClick(
+                      `https://blm-cms.appii.space${videoData[1]?.url}`
+                    )
+                  }
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
+                  </div>
                   <video
-                    autoPlay
                     loop
                     muted
                     className="w-full h-full object-cover z-3"
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[1]?.url}`
+                      )
+                    }
                   >
                     <source
                       src={`https://blm-cms.appii.space${videoData[1]?.url}`}
@@ -545,11 +598,24 @@ const Home = () => {
               )}
               {videoData[2]?.url ? (
                 <div className="relative w-full h-[62px] sm:h-[140px] lg:h-[224px]">
+                  <div
+                   onClick={() =>
+                    handleVideoClick(
+                      `https://blm-cms.appii.space${videoData[2]?.url}`
+                    )
+                  }
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
+                  </div>
                   <video
-                    autoPlay
                     loop
                     muted
                     className="w-full h-full object-cover z-3"
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[2]?.url}`
+                      )
+                    }
                   >
                     <source
                       src={`https://blm-cms.appii.space${videoData[2]?.url}`}
@@ -562,11 +628,24 @@ const Home = () => {
               )}
               {videoData[3]?.url ? (
                 <div className="relative w-full h-[62px] sm:h-[140px] lg:h-[224px]">
+                  <div
+                   onClick={() =>
+                    handleVideoClick(
+                      `https://blm-cms.appii.space${videoData[3]?.url}`
+                    )
+                  }
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
+                  </div>
                   <video
-                    autoPlay
                     loop
                     muted
                     className="w-full h-full object-cover z-3"
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[3]?.url}`
+                      )
+                    }
                   >
                     <source
                       src={`https://blm-cms.appii.space${videoData[3]?.url}`}
@@ -579,11 +658,24 @@ const Home = () => {
               )}
               {videoData[4]?.url ? (
                 <div className="relative w-full h-[62px] sm:h-[140px] lg:h-[224px]">
+                  <div
+                   onClick={() =>
+                    handleVideoClick(
+                      `https://blm-cms.appii.space${videoData[4]?.url}`
+                    )
+                  }
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
+                  </div>
                   <video
-                    autoPlay
                     loop
                     muted
                     className="w-full h-full object-cover z-3"
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[4]?.url}`
+                      )
+                    }
                   >
                     <source
                       src={`https://blm-cms.appii.space${videoData[4]?.url}`}
@@ -621,8 +713,6 @@ const Home = () => {
       </section>
 
       {/* Footer Section */}
-
-     
     </>
   );
 };

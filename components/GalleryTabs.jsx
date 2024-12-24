@@ -4,6 +4,8 @@ import useStrapi from "@/hooks/useStrapi";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import VideoModal from "./VideoModal";
+import { IoPlayCircleOutline } from "react-icons/io5";
 
 
 const GalleryTabs = () => {
@@ -15,6 +17,10 @@ const GalleryTabs = () => {
     const [ videoGallery, setVideoGallery ] = useState([])
     const [ celebrations, setCelebrations ] = useState([])
     const [ csrActivities, setCsrActivities ] = useState([])
+    const [ modalData, setModalData ] = useState({
+      videoUrl: "",
+      isOpen: false,
+    })
 
     const { loading, error, data } = useStrapi("/api/gallery-page", GALLERY_QUERY)
 
@@ -25,6 +31,13 @@ const GalleryTabs = () => {
       setCelebrations(data?.data?.galleryTabs[2]?.images)
       setCsrActivities(data?.data?.galleryTabs[3]?.images)
     }, [data])
+
+    const handleVideoClick = ( url ) => { 
+      setModalData({
+        videoUrl: url,
+        isOpen: true,
+      })
+    }
 
     
     
@@ -83,6 +96,11 @@ const GalleryTabs = () => {
 
   return (
     <>
+      <VideoModal
+        videoUrl={modalData.videoUrl}
+        isOpen={modalData.isOpen}
+        onClose={() => setModalData({ ...modalData, isOpen: false })}
+      />
       <section className="flex flex-col items-start justify-start p-6 lg:max-w-[1290px] w-full">
         <div className="flex gap-4 w-full items-start justify-start">
           <button
@@ -156,7 +174,17 @@ const GalleryTabs = () => {
               </p>
               {/*<div className=" z-[5] absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-[.7]"></div>*/}
               <div className="relative w-full h-full">
-                <video controls muted className="w-full h-full object-cover">
+                <div
+                  onClick={() =>
+                    handleVideoClick(
+                      `https://blm-cms.appii.space${item.file.url}`
+                    )
+                  }
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                >
+                  <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
+                </div>
+                <video muted className="w-full h-full object-cover">
                   <source
                     src={`https://blm-cms.appii.space${item.file.url}`}
                     type="video/mp4"
