@@ -43,7 +43,7 @@ const DownloadAndSubmit = () => {
         }
       });
 
-      await submitMemberShipForm(file)
+      await submitMemberShipForm({file})
 
         // Close the loading alert
       Swal.close();

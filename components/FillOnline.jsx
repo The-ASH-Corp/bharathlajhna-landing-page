@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import SectionDivision from "./ui/SectionDivision";
+import { submitMemberShipForm } from '@/app/actions';
 
 const FillOnline = () => {
   const [formData, setFormData] = useState({
     name: '',
     age: '',
     gender: '',
-    fatherNameOrSpouse: '',
+    fatherOrSpouseName: '',
     mobile: '',
     email: '',
     addhaar: '',
@@ -18,7 +19,7 @@ const FillOnline = () => {
 
     previousMembershipDate: '',
     membershipNumber: '',
-    shareToken: '',
+    shareTaken: '',
     discontinuanceDate: '',
     discontinuanceReason: '',
 
@@ -41,45 +42,109 @@ const FillOnline = () => {
 
   const handleInputChange = (e) => {
     const { name, value, type } = e.target;
+    console.log({name,value,type});
+    
     setFormData((prevData) => ({
       ...prevData,
       [name]: type === 'radio' ? value : value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const requiredFields = ['name', 'age', 'gender', 'mobile', 'email', 'addhaar', 'pan', 'address'];
-    const missingFields = requiredFields.filter((field) => !formData[field]);
-
-    if (missingFields.length > 0) {
-      // alert(`Please fill in the following required fields:\n${missingFields.join(', ')}`);
-
-      Swal.fire({
-        icon: 'warning',
-        title: 'Oops...',
-        text: `Please fill in the following required fields:\n${missingFields.join(', ')}`,
-        customClass:{
-          popup:"swal-container",
-          confirmButton:"swal-button-warning",
+    try {
+        const requiredFields = ['name', 'age', 'gender', 'mobile', 'email', 'addhaar', 'pan', 'address'];
+        const missingFields = requiredFields.filter((field) => !formData[field]);
+    
+        if (missingFields.length > 0) {
+          // alert(`Please fill in the following required fields:\n${missingFields.join(', ')}`);
+    
+          Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: `Please fill in the following required fields:\n${missingFields.join(', ')}`,
+            customClass:{
+              popup:"swal-container",
+              confirmButton:"swal-button-warning",
+            }
+          })
+          return;
         }
-      })
-      return;
-    }
+          
+          Swal.fire({
+            title: 'Submitting...',
+            text: 'Please wait while we process your submission.',
+            icon: 'info',
+            allowOutsideClick: false, // Prevent closing the modal on outside click
+            showConfirmButton: false, // Hide the confirm button
+            didOpen: () => {
+              Swal.showLoading(); // Show loading spinner
+            },
+            customClass:{
+              confirmButton:"swal-button-success",
+              popup:"swal-container",
+              
+            }
+          });
 
-    console.log('Form Data Submitted:', formData);
+          console.log('Form Data Submitted:', formData);
+    
+          await submitMemberShipForm({data: formData})
+    
+            // Close the loading alert
+          Swal.close();
+    
+    
+          Swal.fire({
+            title: 'Success!',
+            text: 'Your membership form has been submitted successfully.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            customClass:{
+              confirmButton:"swal-button-success",
+              popup:"swal-container",
+              
+            }
+            
+          });
+    
+          
+        } catch (error) {
+          console.log({error});
+    
+           // Close the loading alert in case of an error
+        Swal.close();
+    
+          Swal.fire({
+            title: 'Error!',
+            text: 'There was an issue submitting your form. Please try again.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            customClass:{
+              confirmButton:"swal-button-success",
+              popup:"swal-container",
+              
+            }
+          });
+        }
+
+   
   };
 
   const renderInput = (name, type, placeholder, extraProps = {}) => {
     if (type === "date") {
+      console.log({name});
+      
       return (
         <input
 
           type="text"
           id={name}
+          name={name}
           placeholder={placeholder}
           onFocus={(e) => (e.target.type = "date")}
           onBlur={(e) => (e.target.type = "text")}
+          onChange={handleInputChange}
           className="w-full text-sm p-3 border border-black/10 bg-[#F6F6F6] font-poppins placeholder:font-poppins focus:outline-none"
           {...extraProps}
         />
@@ -122,8 +187,8 @@ const FillOnline = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              {renderInput('fatherName', 'text', 'Father/Spouse Name')}
-              {renderInput('mobile', 'text', 'Mobile Number')}
+              {renderInput('fatherOrSpouseName', 'text', 'Father/Spouse Name')}
+              {renderInput('mobile', 'tel', 'Mobile Number')}
               {renderInput('email', 'email', 'Email ID')}
             </div>
 
@@ -134,7 +199,7 @@ const FillOnline = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              {renderInput('annualIncome', 'text', 'Annual Income (RS)')}
+              {renderInput('annualIncome', 'number', 'Annual Income (RS)')}
               {renderInput('address', 'text', 'Residence Address')}
             </div>
 
@@ -152,7 +217,7 @@ const FillOnline = () => {
             <div className="flex flex-col sm:grid sm:grid-cols-3 gap-3">
               {renderInput('previousMembershipDate', 'date', 'Previous Membership Date')}
               {renderInput('membershipNumber', 'text', 'Membership Number')}
-              {renderInput('shareToken', 'text', 'Share Token')}
+              {renderInput('shareTaken', 'number', 'Share Taken')}
               {renderInput('discontinuanceDate', 'date', 'Discontinuance Date')}
               {renderInput('discontinuanceReason', 'text', 'Reason for Discontinuance')}
             </div>
@@ -161,8 +226,8 @@ const FillOnline = () => {
           <SectionDivision />
 
           <div className="flex flex-col sm:grid sm:grid-cols-3 gap-3 mb-6 mt-6">
-            {renderInput('numberOfShares', 'text', 'Number of Shares Required')}
-            {renderInput('amountRemitted', 'text', 'Amount Remitted')}
+            {renderInput('numberOfSharesRequired', 'number', 'Number of Shares Required')}
+            {renderInput('amountRemittedTowardsShareCapitalEntranceFees', 'number', 'Amount Remitted')}
             {renderInput('remittanceDate', 'date', 'Remittance Date')}
             {renderInput('modeOfRemittance', 'text', 'Mode of Remittance')}
           </div>
@@ -185,7 +250,7 @@ const FillOnline = () => {
             {[1, 2].map((num) => (
               <div key={num} className="flex flex-col gap-3 sm:flex-row">
                 {renderInput(`witness${num}Date`, 'date', `Witness ${num} Date`)}
-                {renderInput(`witness${num}Mobile`, 'number', `Witness ${num} Mobile`)}
+                {renderInput(`witness${num}Mobile`, 'tel', `Witness ${num} Mobile`)}
                 {renderInput(`witness${num}Address`, 'text', `Witness ${num} Address`)}
               </div>
             ))}
