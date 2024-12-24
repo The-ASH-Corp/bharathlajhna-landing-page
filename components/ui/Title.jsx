@@ -2,12 +2,16 @@ import Image from "next/image"
 
 
 
-const Title = ({ children,className }) => {
+const Title = ({ children,className,element = 'h1', icon = true }) => {
   return (
     <>
+    {
+      element === 'h1' ? (
         <h1 className={`relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px] ${ className }`}>
               { children }
-              <Image
+              {
+                icon &&  (
+                  <Image
               priority={true}
                 src={"/assets/icons/text-decoration-pattern.svg"}
                 alt="text decoration pattern"
@@ -15,7 +19,24 @@ const Title = ({ children,className }) => {
                 height={100}
                 className="absolute top-[-10px] right-[-13px] w-[20px] lg:w-[30px] lg:top-[-13px] lg:right-[-18px]"
               />
+                )
+              }
+              
             </h1>
+      ) : (
+        <p className={`relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px] ${ className }`}>
+        { children }
+        <Image
+        priority={true}
+          src={"/assets/icons/text-decoration-pattern.svg"}
+          alt="text decoration pattern"
+          width={100}
+          height={100}
+          className="absolute top-[-10px] right-[-13px] w-[20px] lg:w-[30px] lg:top-[-13px] lg:right-[-18px]"
+        />
+      </p>
+      )
+    }
     </>
   )
 }

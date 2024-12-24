@@ -14,8 +14,6 @@ const Service = () => {
 
   return (
     <>
-      
-
       <main className="relative w-full h-[80vh]">
         <Image
           alt="Service hero"
