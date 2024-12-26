@@ -174,7 +174,7 @@ const Home = () => {
       <main className="p-6 py-10 flex justify-center items-center">
         <section className="flex flex-col items-center justify-center gap-7 lg:max-w-[1400px]">
           <div className="flex flex-col justify-start items-start gap-3">
-            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">why BLM</p>
+            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Why BLM</p>
             <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
               We are a self-governing group of individuals who work together as
               members of a jointly owned business in South India to achieve our
@@ -469,7 +469,7 @@ const Home = () => {
 
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
-          <p className="">News</p>
+          <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">News</p>
           <div className="flex w-full justify-between">
             <div className="flex gap-6">
               <button

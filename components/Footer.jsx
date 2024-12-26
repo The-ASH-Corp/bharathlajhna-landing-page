@@ -42,7 +42,7 @@ const Footer = () => {
             <Link href={"/branch?tab=tamil"}>
             <FancyButton name={"TAMIL NADU"} />
             </Link>
-            <Link href={"/branch?tab=pondi"}>
+            <Link href={"/branch?tab=pondichery"}>
             <FancyButton name={"PONDICHERRY"} />
             </Link>
           </div>

@@ -112,15 +112,15 @@ const BranchClient = () => {
         </section>
 
         <div className="flex gap-4 w-full items-start justify-start">
-          {['kerala', 'tamil', 'pondi'].map((tab) => (
+          {['kerala', 'tamil nadu', 'pondichery'].map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`text-[10px] sm:text-[20px] lg:text-[22px] font-poppins ${
-                activeTab === tab ? 'text-black border-b-[1px] border-accent_color' : 'text-para_color'
+              onClick={() => setActiveTab(tab.split(" ")[0])}
+              className={`capitalize text-[10px] sm:text-[20px] lg:text-[22px] font-poppins ${
+                activeTab === tab.split(' ')[0] ? 'text-black border-b-[1px] border-accent_color' : 'text-para_color'
               }`}
             >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab.split(0)}
             </button>
           ))}
         </div>
