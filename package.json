@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "antd": "^5.22.6",
     "aos": "^2.3.4",
     "axios": "^1.7.9",
     "classnames": "^2.5.1",

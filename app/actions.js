@@ -60,3 +60,48 @@ export async function submitMemberShipForm({file = undefined,data = undefined}) 
     }
 
 }
+
+
+export async function submitResume(formData) {
+    try {
+
+        const {name, mobileNo,email,address, whyShouldWeHireYou,file} = formData;
+
+
+
+        const transporter = nodemailer.createTransport({
+            host:process.env.SMTP_HOST,
+            port:465,
+            secure: true,
+                auth: {
+                    user: process.env.SMTP_USER,
+                    pass: process.env.SMTP_PASS,
+                },
+            });
+
+            const fileBuffer = Buffer.from(await file.originFileObj.arrayBuffer());
+            const tableHtml = createTableWithRowHeaders([{name,mobileNo,email,address,whyShouldWeHireYou}])
+            const mailOptions = {
+                from: process.env.MAIL_FROM,
+                to: process.env.MAIL_TO,
+                subject: "You Have a new Job Application From BLM Website-Membership Page",
+                // text: `Please find the details of the membership form:\n\n${JSON.stringify(data, null, 2)}`,
+                html: `
+                <p>Please find the details of the membership form:</p>
+                ${tableHtml}
+              `,
+              attachments: [
+                {
+                    filename: `${name}.pdf`,
+                    content: fileBuffer,
+                },
+            ],
+            };
+            const info = await transporter.sendMail(mailOptions);
+            console.log("Email sent: " + info.response);
+            return { success: true };
+    } catch (error) {
+        console.log({error});
+        return { success: false, error: error.message };
+    }
+}

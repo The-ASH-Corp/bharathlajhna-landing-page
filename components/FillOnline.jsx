@@ -131,7 +131,7 @@ const FillOnline = () => {
    
   };
 
-  const renderInput = (name, type, placeholder, extraProps = {}) => {
+  const renderInput = (name, type, placeholder, extraProps = {}, onChangeFn) => {
     if (type === "date") {
       console.log({name});
       
