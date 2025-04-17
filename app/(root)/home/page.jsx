@@ -184,9 +184,9 @@ const Home = () => {
             </p>
           </div>
           <div className="flex gap-1 items-center justify-center w-full h-[140px] sm:h-[320px] lg:h-[520px]">
-            <div className="w-[50%] h-full bg-[url('/assets/images/why-img-1.png')] bg-no-repeat bg-cover bg-center"></div>
-            <div className="w-[30%] h-full bg-[url('/assets/images/why-img-2.png')] bg-no-repeat bg-cover bg-center"></div>
-            <div className="w-[20%] h-full bg-[url('/assets/images/why-img-3.png')] bg-no-repeat bg-cover bg-center"></div>
+            <div className="w-[50%] h-full bg-[url('/assets/images/why-us-1.png')] bg-no-repeat bg-cover bg-center"></div>
+            <div className="w-[30%] h-full bg-[url('/assets/images/why-us-2.png')] bg-no-repeat bg-cover bg-center"></div>
+            <div className="w-[20%] h-full bg-[url('/assets/images/why-us-3.jpg')] bg-no-repeat bg-cover bg-center"></div>
           </div>
         </section>
       </main>
