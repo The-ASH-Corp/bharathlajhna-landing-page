@@ -24,9 +24,13 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
 
-      - name: Deploy code to server and run build
+      - name: Deploy and Build on Server
+        env:
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
         run: |
-          ssh $SSH_USERNAME@$SERVER_IP << EOF
+          ssh -o StrictHostKeyChecking=no $SSH_USERNAME@$SERVER_IP << 'EOF'
+            set -e
             cd /home/prod/project
             git fetch origin
             git reset --hard origin/main
@@ -35,4 +39,3 @@ jobs:
             npm run build
             pm2 restart blm
           EOF
-
