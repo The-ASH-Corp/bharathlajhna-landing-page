@@ -17,7 +17,7 @@ const Projects = () => {
       <main className="relative w-full h-[80vh]">
         <Image
           alt="Service hero"
-          src={"/assets/images/service-img-2.png"}
+          src={"/assets/images/projects_banner.jpg"}
           fill
           priority={true}
           sizes="100vw"

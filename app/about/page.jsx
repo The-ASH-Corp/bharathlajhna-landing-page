@@ -11,7 +11,7 @@ const AboutUs = () => {
      <div className="relative w-full h-[80vh]">
         <Image
           alt="BLM"
-          src="/assets/images/about-img-1.jpg"
+          src="/assets/images/about_banner.jpg"
           fill
           priority={true}
           sizes="100vw"

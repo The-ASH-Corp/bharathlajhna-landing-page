@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import AnimatedCounter from "@/components/AnimatedCounter";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -13,7 +13,7 @@ import { HOMEPAGE_QUERY } from "@/constants/strapiQueries";
 import useStrapi from "@/hooks/useStrapi";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { BsArrowRight } from "react-icons/bs";
@@ -21,26 +21,22 @@ import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 import VideoModal from "@/components/VideoModal";
 import { IoPlayCircleOutline } from "react-icons/io5";
 
-
-
 const Home = () => {
-
-  const [ projectTab, setProjectTab] = useState("kerala")
-  const [ newsTab, setNewsTab] = useState("news")
-  const [ herosliderData, setHeroSliderData ] = useState([])
-  const [ serviceData, setServiceData ] = useState([])
-  const [ projectData, setProjectData ] = useState([])
-  const [ testimonialData, setTestimonialData ] = useState([])
-  const [  newsData, setNewsData ] = useState([])
-  const [  videoData, setVideoData ] = useState([])
+  const [projectTab, setProjectTab] = useState("kerala");
+  const [newsTab, setNewsTab] = useState("news");
+  const [herosliderData, setHeroSliderData] = useState([]);
+  const [serviceData, setServiceData] = useState([]);
+  const [projectData, setProjectData] = useState([]);
+  const [testimonialData, setTestimonialData] = useState([]);
+  const [newsData, setNewsData] = useState([]);
+  const [videoData, setVideoData] = useState([]);
   const [modalData, setModalData] = useState({
     videoUrl: "",
     isOpen: false,
-  })
+  });
 
-
-  const {data,loading, error} = useStrapi("/api/home-page",HOMEPAGE_QUERY)
-  const router = useRouter()
+  const { data, loading, error } = useStrapi("/api/home-page", HOMEPAGE_QUERY);
+  const router = useRouter();
 
   useEffect(() => {
     if (data?.data?.blocks) {
@@ -53,23 +49,20 @@ const Home = () => {
     }
   }, [data]);
 
-
   const handleVideoClick = (videoUrl) => {
     setModalData({
       videoUrl: videoUrl,
       isOpen: true,
     });
-  }
-  
+  };
 
-  if(error){
+  if (error) {
     return (
       <main className="flex items-center justify-center h-screen text-red-500">
         Error loading page: {error.message}
       </main>
-    )
+    );
   }
-
 
   return (
     <>
@@ -174,7 +167,9 @@ const Home = () => {
       <main className="p-6 py-10 flex justify-center items-center">
         <section className="flex flex-col items-center justify-center gap-7 lg:max-w-[1400px]">
           <div className="flex flex-col justify-start items-start gap-3">
-            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Why BLM</p>
+            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
+              Why BLM
+            </p>
             <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
               We are a self-governing group of individuals who work together as
               members of a jointly owned business in South India to achieve our
@@ -185,8 +180,8 @@ const Home = () => {
           </div>
           <div className="flex gap-1 items-center justify-center w-full h-[140px] sm:h-[320px] lg:h-[520px]">
             <div className="w-[50%] h-full bg-[url('/assets/images/why-us-1.png')] bg-no-repeat bg-cover bg-center"></div>
-            <div className="w-[30%] h-full bg-[url('/assets/images/why-us-2.png')] bg-no-repeat bg-cover bg-center"></div>
-            <div className="w-[20%] h-full bg-[url('/assets/images/why-us-3.jpg')] bg-no-repeat bg-cover bg-center"></div>
+            <div className="w-[30%] h-full bg-[url('/assets/images/why-us-3.jpg')] bg-no-repeat bg-cover bg-center"></div>
+            <div className="w-[20%] h-full bg-[url('/assets/images/why-us-2.png')] bg-no-repeat bg-cover bg-center"></div>
           </div>
         </section>
       </main>
@@ -196,27 +191,43 @@ const Home = () => {
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col sm:flex-row items-start sm:items-center justify-center gap-7 w-full lg:max-w-[1400px]">
           <div className="sm:w-[50%] md:w-[50%]">
-            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Chairman Says</p>
+            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
+              Chairman’s Message
+            </p>
             <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
-              It is my great pleasure to extend heartfelt greetings to one and
-              all. I want to take this opportunity to thank all members, leaders
-              and staff for contributing wholeheartedly to the progress of our
-              Society. I would also like to thank our valued members for their
-              continuous patronage. Our modest beginning in 2006 with our
-              resilience and ability to embrace change with an open mind has
-              enabled us to stay true to our mission of delivering the best
-              services and products. We believe the success and growth of our
-              Society can be attributed to the consistency of our standards and
-              policies with the kind cooperation of our members.
-              <span className="hidden sm:inline-block">
-                Over the years, our commitment to professional ethics and
-                quality has evolved into corporate standards and practices that
-                we use as our benchmark for excellence. Our approach in
-                providing the highest level of quality in all of our endeavors
-                has delivered returns at every step of the development. We are
-                proud of ourselves for being a trustworthy household name in
-                South India
+              Dear Members and Well-wishers,
+              <span className="hidden sm:inline-block pt-4">
+                It fills me with immense pride and gratitude to extend my
+                heartfelt greetings to each of you. From our humble beginnings
+                in 2006 to our present status as one of India’s most respected
+                multistate cooperative societies, this journey has been nothing
+                short of extraordinary.
               </span>
+              <span className="hidden sm:inline-block pt-4">
+                Our progress has been possible only because of the tireless
+                efforts of our leaders, staff, and members who placed their
+                trust in the vision of collective growth. I thank each one of
+                you for your continued support.
+              </span>
+              <span className="hidden sm:inline-block pt-4">
+                At BLM, we have always embraced change with courage and clarity.
+                Our commitment to ethical practices and quality services has
+                earned us trust in every household we serve. Whether through our
+                housing projects, land development, education, transport, or
+                welfare programs—we aim to make a difference, one life at a
+                time.
+              </span>
+              <span className="hidden sm:inline-block pt-4">
+                As we move ahead, I assure you that our standards will only grow
+                stronger, our mission more focused, and our impact deeper. Let
+                us march forward together toward a future full of hope,
+                opportunity, and shared prosperity.
+              </span>
+              <span className="hidden sm:block pt-4">With warm regards,</span>
+<span className="hidden sm:block pt-2">R. Premkumar</span>
+<span className="hidden sm:block pt-2">Chairman, BLM Society</span>
+
+
             </p>
           </div>
           <div className=" relative w-full h-[200px] sm:w-[50%] md:w-[40%] sm:h-[500px]">
@@ -244,7 +255,9 @@ const Home = () => {
         <section className="flex flex-col items-start sm:items-center justify-center gap-7 w-full lg:max-w-[1290px]">
           <div className="flex items-center justify-between">
             <div>
-              <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Our Services</p>
+              <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
+                Our Services
+              </p>
               <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px] sm:w-[95%] lg:w[70%]">
                 BLM Housing Cooperative Society is committed to providing
                 quality housing services to our members. We strive to exceed our
@@ -285,7 +298,9 @@ const Home = () => {
 
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
-          <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Our Projects</p>
+          <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
+            Our Projects
+          </p>
           <div className="flex w-full justify-between">
             <div className="flex gap-6">
               <button
@@ -387,7 +402,9 @@ const Home = () => {
           <div className="w-full flex flex-col gap-3">
             <div className="flex sm:flex-row flex-col gap-3 justify-start items-start">
               <div className="sm:w-[50%]">
-                <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Property Loans</p>
+                <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
+                  Property Loans
+                </p>
                 <p className="text-[12px] sm:text-[14px] lg:text-[18px] font-poppins mt-3">
                   Now you can meet your property needs with BLM&apos;s property
                   loan. With our property loan, you may finally buy the property
@@ -430,7 +447,9 @@ const Home = () => {
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
           <div className="flex items-center justify-between sm:w-full">
             <div>
-              <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">What They Say</p>
+              <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
+                What They Say
+              </p>
               <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px] sm:w-[95%] lg:w[70%]">
                 Hear the powerful voices and personal stories that highlight the
                 impact of the BLM movement.
@@ -469,7 +488,9 @@ const Home = () => {
 
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
-          <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">News</p>
+          <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
+            News
+          </p>
           <div className="flex w-full justify-between">
             <div className="flex gap-6">
               <button
@@ -528,19 +549,22 @@ const Home = () => {
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
           <div>
-            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">Videos</p>
+            <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
+              Videos
+            </p>
           </div>
           <div className="w-full flex flex-col items-center justify-center gap-3">
             <div className="relative w-full h-[236px] sm:h-[372px] lg:h-[600px]">
               {videoData[0]?.url ? (
                 <>
                   <div
-                   onClick={() =>
-                    handleVideoClick(
-                      `https://blm-cms.appii.space${videoData[0]?.url}`
-                    )
-                  }
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[0]?.url}`
+                      )
+                    }
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                  >
                     <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
                   </div>
                   <video
@@ -569,12 +593,13 @@ const Home = () => {
               {videoData[1]?.url ? (
                 <div className="relative w-full h-[62px] sm:h-[140px] lg:h-[224px]">
                   <div
-                   onClick={() =>
-                    handleVideoClick(
-                      `https://blm-cms.appii.space${videoData[1]?.url}`
-                    )
-                  }
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[1]?.url}`
+                      )
+                    }
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                  >
                     <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
                   </div>
                   <video
@@ -599,12 +624,13 @@ const Home = () => {
               {videoData[2]?.url ? (
                 <div className="relative w-full h-[62px] sm:h-[140px] lg:h-[224px]">
                   <div
-                   onClick={() =>
-                    handleVideoClick(
-                      `https://blm-cms.appii.space${videoData[2]?.url}`
-                    )
-                  }
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[2]?.url}`
+                      )
+                    }
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                  >
                     <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
                   </div>
                   <video
@@ -629,12 +655,13 @@ const Home = () => {
               {videoData[3]?.url ? (
                 <div className="relative w-full h-[62px] sm:h-[140px] lg:h-[224px]">
                   <div
-                   onClick={() =>
-                    handleVideoClick(
-                      `https://blm-cms.appii.space${videoData[3]?.url}`
-                    )
-                  }
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[3]?.url}`
+                      )
+                    }
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                  >
                     <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
                   </div>
                   <video
@@ -659,12 +686,13 @@ const Home = () => {
               {videoData[4]?.url ? (
                 <div className="relative w-full h-[62px] sm:h-[140px] lg:h-[224px]">
                   <div
-                   onClick={() =>
-                    handleVideoClick(
-                      `https://blm-cms.appii.space${videoData[4]?.url}`
-                    )
-                  }
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    onClick={() =>
+                      handleVideoClick(
+                        `https://blm-cms.appii.space${videoData[4]?.url}`
+                      )
+                    }
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                  >
                     <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
                   </div>
                   <video

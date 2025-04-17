@@ -19,7 +19,7 @@ const Branch = () => {
       <main className="relative w-full h-[80vh]">
         <Image
           alt="BLM"
-          src="/assets/images/branch-hero.png"
+          src="/assets/images/branches_banner.jpg"
           fill
           priority={true}
           sizes="100vw"
