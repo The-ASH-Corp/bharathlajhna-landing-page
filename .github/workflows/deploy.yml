@@ -32,6 +32,7 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+            # Navigate to project directory and deploy
             cd /home/prod/project
             git fetch origin
             git reset --hard origin/main
