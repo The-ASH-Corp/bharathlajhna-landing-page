@@ -92,7 +92,7 @@ const Home = () => {
       <section className="flex items-center justify-center w-full py-8 sm:py-24">
         <div className="flex flex-col items-center justify-center px-7 py-1 lg:px-20">
           <p className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
-            <AnimatedCounter endValue={10} duration={1000} /> lack+
+            <AnimatedCounter endValue={10} duration={1000} /> lakh+
           </p>
           <p className="text-[12px] text-center font-poppins font-[400] text-[#747474] sm:text-[18px] lg:text-[24px]">
             Members

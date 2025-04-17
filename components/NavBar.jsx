@@ -34,6 +34,7 @@ const NavBar = () => {
   ];
 
   useEffect(() => {
+    console.log("pathname",pathname)
     const handleScroll = () => setScrolled(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -69,10 +70,11 @@ const NavBar = () => {
             >
               {label}
               <span
-                className={classNames(
-                  "absolute left-0 bottom-0 h-[3px] rounded-full bg-yellow-300 transition-all duration-500 ease-in-out",
-                  pathname === href ? "w-full" : "w-0"
-                )}
+               className={classNames(
+                "absolute left-0 bottom-0 h-[3px] rounded-full bg-yellow-300 transition-all duration-500 ease-in-out",
+                pathname === '/' && href === '/home' ? "w-full" : pathname === href ? "w-full" : "w-0"
+              )}
+              
               ></span>
             </Link>
           </li>

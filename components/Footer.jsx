@@ -79,11 +79,11 @@ const Footer = () => {
                 </p>
                 <ul className="  flex flex-col gap-2 lg:leading-9">
                   
-                  <Link href={"/services"}>Land Development</Link>
-                  <Link href={"/services"}>Housing Development</Link>
-                  <Link href={"/services"}>BLM Transport</Link>
-                  <Link href={"/services"}>Civil SuppLinkes</Link>
-                  <Link href={"/services"}>BLM Jewellery</Link>
+                  <Link href={"/service"}>Land Development</Link>
+                  <Link href={"/service"}>Housing Development</Link>
+                  <Link href={"/service"}>BLM Transport</Link>
+                  <Link href={"/service"}>Civil SuppLinkes</Link>
+                  <Link href={"/service"}>BLM Jewellery</Link>
                 </ul>
               </div>
               <div>
