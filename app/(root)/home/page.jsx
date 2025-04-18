@@ -93,15 +93,15 @@ const Home = () => {
         </div>
         <div className="flex flex-col items-center justify-center border-l-[1px] border-r-[1px] border-[#747474] px-7 py-1 lg:px-20">
           <p className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
-            <AnimatedCounter endValue={3} duration={1000} />+
+            <AnimatedCounter endValue={3} duration={1000} />
           </p>
           <p className="text-[12px] text-center font-poppins font-[400] text-[#747474] sm:text-[18px] lg:text-[24px]">
-            Stores
+          States
           </p>
         </div>
         <div className="flex flex-col items-center justify-center px-7 py-1 lg:px-20">
           <p className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
-            <AnimatedCounter endValue={104} duration={1000} />+
+            <AnimatedCounter endValue={125} duration={1000} />+
           </p>
           <p className="text-[12px] text-center font-poppins font-[400] text-[#747474] sm:text-[18px] lg:text-[24px]">
             Branches
@@ -179,7 +179,7 @@ const Home = () => {
             </p>
           </div>
           <div className="flex gap-1 items-center justify-center w-full h-[140px] sm:h-[320px] lg:h-[520px]">
-            <div className="w-[50%] h-full bg-[url('/assets/images/why-us-1.png')] bg-no-repeat bg-cover bg-center"></div>
+            <div className="w-[50%] h-full bg-[url('/assets/images/why-us-img-1.png')] bg-no-repeat bg-cover bg-center"></div>
             <div className="w-[30%] h-full bg-[url('/assets/images/why-us-3.jpg')] bg-no-repeat bg-cover bg-center"></div>
             <div className="w-[20%] h-full bg-[url('/assets/images/why-us-2.png')] bg-no-repeat bg-cover bg-center"></div>
           </div>
