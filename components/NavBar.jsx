@@ -29,8 +29,7 @@ const NavBar = () => {
     { href: "/branch", label: "Branches" },
     { href: "/service", label: "Service" },
     { href: "/projects", label: "Projects" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/loans", label: "Loans" },
+    { href: "/gallery", label: "Gallery" }
   ];
 
   useEffect(() => {
@@ -59,7 +58,7 @@ const NavBar = () => {
       </Link>
 
       {/* Desktop Navigation */}
-      <ul className="hidden lg:flex items-center gap-3 lg:gap-9 font-poppins my-2 bg-white px-5 pt-2 pb-1 rounded-[30px] mx-2 border shadow-sm">
+      <ul className="hidden lg:flex items-center gap-8 lg:gap-12 font-poppins my-2 bg-white px-5 pt-2 pb-1 rounded-[30px] mx-2 border shadow-sm">
         {navLinks.map(({ href, label }) => (
           <li key={href} className="relative">
             <Link
