@@ -82,7 +82,7 @@ const Footer = () => {
                   <Link href={"/service"}>Land Development</Link>
                   <Link href={"/service"}>Housing Development</Link>
                   <Link href={"/service"}>BLM Transport</Link>
-                  <Link href={"/service"}>Civil SuppLinkes</Link>
+                  <Link href={"/service"}>Civil Supplies</Link>
                   <Link href={"/service"}>BLM Jewellery</Link>
                 </ul>
               </div>
