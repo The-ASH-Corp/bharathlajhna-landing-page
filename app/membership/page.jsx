@@ -41,17 +41,29 @@ const Membership = () => {
     <>
      
 
-      <main className="relative w-full h-[80vh]">
-        <Image
-          alt="Membership hero"
-          src={"/assets/images/loan-img.jpeg"}
-          fill
-          priority={true}
-          sizes="100vw"
-          quality={85}
-          className="w-full absolute top-0 left-0 object-cover object-center"
-        />
-      </main>
+     <main className="relative w-full h-[100vh]">
+  {/* Desktop Image */}
+  <Image
+    alt="Membership Hero Desktop"
+    src="/assets/images/membership.jpg"
+    fill
+    priority
+    sizes="100vw"
+    quality={85}
+    className="hidden sm:block w-full absolute top-0 left-0 object-cover object-center"
+  />
+
+  {/* Mobile Image */}
+  <Image
+    alt="Membership Hero Mobile"
+    src="/assets/images/mob_2.jpg" // <- Add a mobile-optimized image
+    fill
+    priority
+    sizes="100vw"
+    quality={85}
+    className="block sm:hidden w-full absolute top-0 left-0 object-cover object-center"
+  />
+</main>
 
       <main className="flex flex-col items-center justify-center w-full mb-10 lg:mb-20">
         <section className="flex flex-col items-start justify-start p-6 lg:max-w-[1290px] w-full">
@@ -62,7 +74,7 @@ const Membership = () => {
           </p>
         </section>
         <SectionDivision />
-        <section className="flex flex-col items-start justify-start p-6 lg:max-w-[1290px] w-full">
+        {/* <section className="flex flex-col items-start justify-start p-6 lg:max-w-[1290px] w-full">
           <div className="flex gap-4 w-full items-start justify-start">
             <button
               className={`font-poppins  ${
@@ -85,7 +97,7 @@ const Membership = () => {
               Fill Online
             </button>
           </div>
-        </section>
+        </section> */}
 
         <section className="flex flex-col items-start justify-start p-6 lg:max-w-[1290px] w-full">
           {tab === "downloadAndSubmit" && <DownloadAndSubmit />}

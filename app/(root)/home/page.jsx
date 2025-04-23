@@ -96,7 +96,7 @@ const Home = () => {
             <AnimatedCounter endValue={3} duration={1000} />
           </p>
           <p className="text-[12px] text-center font-poppins font-[400] text-[#747474] sm:text-[18px] lg:text-[24px]">
-          States
+            States
           </p>
         </div>
         <div className="flex flex-col items-center justify-center px-7 py-1 lg:px-20">
@@ -112,10 +112,12 @@ const Home = () => {
       {/* Welcome section */}
 
       <main className="bg-primary_color text-white w-full">
-        <section className="relative w-full flex flex-col items-center justify-center p-7 py-32 sm:px-14 lg:py-52">
+        <section className="relative w-full flex flex-col items-center  justify-center p-7 py-32 sm:px-14 lg:py-35 ">
           <p className="font-allenoire text-[22px] sm:text-[38px] lg:text-[58px]">
             Welcome to BLM
           </p>
+          <p className="font-poppins font-semibold text-[22px] sm:text-[38px] lg:text-[20px]">Empowering Lives. Building Futures.</p>
+
           <div>
             <Image
               src={"/assets/icons/underline-pattern.svg"}
@@ -130,14 +132,20 @@ const Home = () => {
               priority={true}
             />
           </div>
-          <p className="font-poppins text-center mt-[14px] text-[12px] font-[300] w-[320px] leading-5 sm:text-[19px] sm:leading-8 sm:w-[auto] lg:text-[22px] lg:leading-10 lg:max-w-[1100px]">
-            At BLM, we specialize in creating exceptional spaces that blend
-            modern luxury with timeless design. Our passion lies in crafting
-            homes and projects that reflect your style, meet your needs, and
-            exceed expectations. With a focus on quality, innovation, and
-            precision, we bring your vision to life. Thank you for choosing BLM
-            – where dreams take shape and excellence is a standard. Let’s create
-            something extraordinary together!
+          <p className="font-poppins text-center mt-[14px] text-[12px] font-[300] w-[320px] leading-5 sm:text-[19px] sm:leading-8 sm:w-[auto] lg:text-[20px] lg:leading-10 lg:max-w-[1100px]">
+            Welcome to the official website of BLM Society – a pioneering force
+            in cooperative development, financial inclusion, and community
+            upliftment. Founded on strong ethical values and a commitment to
+            people-first progress, BLM Society is more than an institution; it
+            is a movement driven by purpose.From humble beginnings to a rapidly
+            growing presence across regions, BLM Society has always placed
+            people at the heart of everything we do. Whether it’s through our
+            innovative savings and deposit schemes, housing initiatives,
+            educational ventures, or grassroots empowerment programs, we strive
+            to create meaningful change in the lives of our members and
+            communities.We invite you to browse through, discover our vision,
+            and join us in shaping a brighter, more inclusive tomorrow.<br></br> Welcome
+            to BLM Society – where every step forward is a step together.
           </p>
 
           <div className="absolute top-0 left-0 w-[100px] h-[100px] sm:w-[160px] sm:h-[160px] lg:w-[270px] lg:h-[270px]">
@@ -166,16 +174,18 @@ const Home = () => {
 
       <main className="p-6 py-10 flex justify-center items-center">
         <section className="flex flex-col items-center justify-center gap-7 lg:max-w-[1400px]">
-          <div className="flex flex-col justify-start items-start gap-3">
+          <div className="flex flex-col justify-start items-start gap-1">
             <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
-              Why BLM
+              Why Choose Us
             </p>
+            <p className="font-poppins text-gray-700 font-semibold text-[22px] sm:text-[38px] lg:text-[20px]">We’re Not Just a Society. We’re a Shared Journey.</p>
+
             <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
-              We are a self-governing group of individuals who work together as
-              members of a jointly owned business in South India to achieve our
-              common social and cultural needs and objectives. Our primary goal
-              is to raise the members of our BLM family by offering services,
-              jobs, and other opportunities.
+            <span className="hidden sm:inline-block pt-4">  At BLM Society, we are more than a cooperative—we are a movement built on trust, togetherness, and transformation. As a self-governing community of dedicated individuals, we strive to empower our members socially, economically, and culturally.</span>
+
+            <span className="hidden sm:inline-block pt-4">Rooted in South India and expanding with purpose, we offer a wide spectrum of services that uplift lives, generate employment, and create lasting opportunities. Every initiative we undertake—whether in housing, transport, education, or business—is designed with the goal of building a secure and prosperous future for our members.</span>
+
+            <span className="hidden sm:inline-block pt-4">When you choose BLM, you choose shared growth, ethical values, and a legacy of 21 years built on service, solidarity, and success.</span>
             </p>
           </div>
           <div className="flex gap-1 items-center justify-center w-full h-[140px] sm:h-[320px] lg:h-[520px]">
@@ -190,11 +200,13 @@ const Home = () => {
 
       <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col sm:flex-row items-start sm:items-center justify-center gap-7 w-full lg:max-w-[1400px]">
-          <div className="sm:w-[50%] md:w-[50%]">
+          <div className="sm:w-[50%] md:w-[50%] gap-2">
             <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
               Chairman’s Message
             </p>
-            <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
+            <p className="font-poppins font-semibold text-[22px] sm:text-[38px] lg:text-[20px] text-gray-700">From the Heart of Our Leadership: A Message That Inspires</p>
+
+            <p className="font-poppins mt-4 text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
               Dear Members and Well-wishers,
               <span className="hidden sm:inline-block pt-4">
                 It fills me with immense pride and gratitude to extend my
@@ -224,10 +236,10 @@ const Home = () => {
                 opportunity, and shared prosperity.
               </span>
               <span className="hidden sm:block pt-4">With warm regards,</span>
-<span className="hidden sm:block pt-2">R. Premkumar</span>
-<span className="hidden sm:block pt-2">Chairman, BLM Society</span>
-
-
+              <span className="hidden sm:block pt-2">R. Premkumar</span>
+              <span className="hidden sm:block pt-2">
+                Chairman, BLM Society
+              </span>
             </p>
           </div>
           <div className=" relative w-full h-[200px] sm:w-[50%] md:w-[40%] sm:h-[500px]">

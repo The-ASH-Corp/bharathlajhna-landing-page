@@ -55,14 +55,24 @@ const AboutMain = () => {
     <>
      
       <section className="p-6 py-10 flex flex-col justify-center items-center gap-10">
-        <main className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
-          <Title>About us</Title>
-          <p className="font-poppins text-para_color text-sm text-justify">
+        <main className="flex flex-col items-start justify-center gap-2 w-full lg:max-w-[1290px]">
+          <Title>About BLM Society</Title>
+          <p className="font-poppins text-[20px] font-semibold text-gray-700">A Legacy of 21 Years. A Future of Possibilities.</p>
+          {/* <p className="font-poppins text-para_color text-sm text-justify">
             {data?.data?.description !== null &&
             data?.data?.description.length > 0
               ? data?.data?.description
               : "We are a self-governing group of individuals who work together as members of a jointly owned business in South India to achieve our common social and cultural needs and objectives. Our primary goal is to raise the members of our BLM family by offering services, jobs, and other opportunities."}
-          </p>
+          </p> */}
+          <p className="font-poppins text-para_color text-sm ">Founded on 24th February 2006, BLM Society has grown into one of India’s largest and most trusted multistate cooperative societies, completing a remarkable 20 years of service and stepping proudly into its 21st year of operations. What began as a modest vision to uplift lives through collective growth has today blossomed into a dynamic movement that touches thousands of lives across South India.
+
+          <span className="hidden sm:inline-block pt-4 text-justify">BLM’s journey is one of resilience, vision, and unwavering commitment to community development. Over the past two decades, we have consistently set benchmarks in sectors like land and housing development, transport, education, civil supplies, jewellery retail, and even sustainable energy with South India’s first compressed biogas plant.</span>
+
+          <span className="hidden sm:inline-block pt-4 text-justify">Our excellence and integrity have been recognized nationally. BLM is a proud recipient of the ‘Swadesh Samman’ Award—honouring us as one of the best multistate cooperative societies in India, among several other prestigious accolades that underscore our dedication and impact.</span>
+
+          <span className="hidden sm:inline-block pt-4 text-justify">At the heart of our success stands our visionary Chairman, Mr. R. Premkumar—a respected leader whose dynamic leadership, deep-rooted values, and compassionate approach continue to guide the Society’s growth. His foresight has transformed BLM from a grassroots initiative into a socio-economic powerhouse.</span>
+
+          <span className="hidden sm:inline-block pt-4 text-justify">We believe in people over profit, values over valuation. As a self-governing collective, we aim to create opportunities, provide meaningful employment, and build a better tomorrow for all our members. BLM is more than an organization—it is a family, a movement, and a shared dream in motion.</span></p>
         </main>
         <div className="w-full flex flex-col sm:flex-wrap lg:flex-nowrap sm:flex-row items-center justify-center gap-4 lg:max-w-[1290px]">
           {aboutCardData.map((card, index) => (

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { GALLERY_QUERY } from "@/constants/strapiQueries";
 import useStrapi from "@/hooks/useStrapi";
 import Image from "next/image";
@@ -7,92 +7,90 @@ import { useEffect, useState } from "react";
 import VideoModal from "./VideoModal";
 import { IoPlayCircleOutline } from "react-icons/io5";
 
-
 const GalleryTabs = () => {
+  const searchParams = useSearchParams();
 
-  const searchParams = useSearchParams()
+  const [activeTab, setActiveTab] = useState(
+    searchParams.get("tab") || "photo_gallery"
+  );
+  const [photoGallery, setPhotoGallery] = useState([]);
+  const [videoGallery, setVideoGallery] = useState([]);
+  const [celebrations, setCelebrations] = useState([]);
+  const [csrActivities, setCsrActivities] = useState([]);
+  const [modalData, setModalData] = useState({
+    videoUrl: "",
+    isOpen: false,
+  });
 
-    const [ activeTab, setActiveTab ] = useState(searchParams.get("tab") || "photo_gallery")
-    const [ photoGallery, setPhotoGallery ] = useState([])
-    const [ videoGallery, setVideoGallery ] = useState([])
-    const [ celebrations, setCelebrations ] = useState([])
-    const [ csrActivities, setCsrActivities ] = useState([])
-    const [ modalData, setModalData ] = useState({
-      videoUrl: "",
-      isOpen: false,
-    })
+  const { loading, error, data } = useStrapi(
+    "/api/gallery-page",
+    GALLERY_QUERY
+  );
 
-    const { loading, error, data } = useStrapi("/api/gallery-page", GALLERY_QUERY)
+  useEffect(() => {
+    setPhotoGallery(data?.data?.galleryTabs[0]?.images);
+    setVideoGallery(data?.data?.galleryTabs[1]?.images);
+    setCelebrations(data?.data?.galleryTabs[2]?.images);
+    setCsrActivities(data?.data?.galleryTabs[3]?.images);
+  }, [data]);
 
+  const handleVideoClick = (url) => {
+    setModalData({
+      videoUrl: url,
+      isOpen: true,
+    });
+  };
 
-    useEffect(() => {
-      setPhotoGallery(data?.data?.galleryTabs[0]?.images)
-      setVideoGallery(data?.data?.galleryTabs[1]?.images)
-      setCelebrations(data?.data?.galleryTabs[2]?.images)
-      setCsrActivities(data?.data?.galleryTabs[3]?.images)
-    }, [data])
-
-    const handleVideoClick = ( url ) => { 
-      setModalData({
-        videoUrl: url,
-        isOpen: true,
-      })
-    }
-
-    
-    
-    
-
-    // const galleryData = [
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-2.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-3.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-4.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-5.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-6.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-7.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-8.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-9.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-10.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-11.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-12.png",
-    //     },
-    //     {
-    //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
-    //         image: "/assets/images/gallery/gallery-img-13.png",
-    //     }
-    // ]
+  // const galleryData = [
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-2.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-3.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-4.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-5.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-6.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-7.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-8.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-9.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-10.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-11.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-12.png",
+  //     },
+  //     {
+  //         description: "Respected Chairman R Premkumar Honouring Mr. B L Verma, Minister of State in the Ministry of Co-operation, Government of India",
+  //         image: "/assets/images/gallery/gallery-img-13.png",
+  //     }
+  // ]
 
   return (
     <>
@@ -215,11 +213,19 @@ const GalleryTabs = () => {
           ))}
         {activeTab === "csr_activities" &&
           csrActivities?.map((item, index) => (
-            <div key={index} className="relative w-full sm:w-full h-60">
-              <p className="font-allenoire max-w-[250px] absolute z-10 bottom-3 left-3 text-white tracking-wider text-sm">
+            <div
+              key={index}
+              className="relative w-full sm:w-full h-60 group overflow-hidden"
+            >
+              {/* Text description appears on hover */}
+              <p className="font-poppins font-semibold max-w-[400px] absolute z-10 bottom-3 left-3 text-white tracking-wider text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {item.description}
               </p>
-              <div className=" z-[5] absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-[.7]"></div>
+
+              {/* Gradient overlay appears on hover */}
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-black/70 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 z-[5]"></div>
+
+              {/* Image */}
               <div className="relative w-full h-full">
                 <Image
                   alt="Gallery"

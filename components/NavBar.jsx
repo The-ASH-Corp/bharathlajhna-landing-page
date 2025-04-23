@@ -42,12 +42,12 @@ const NavBar = () => {
   return (
     <nav
       className={classNames(
-        "fixed top-0 z-[100] flex  items-end md:items-center justify-between w-full px-3 py-4 transition-all duration-300 ",
+        "fixed md:top-0  z-[100] flex  items-end md:items-center justify-between w-full px-2 md:px-3 md:py-4 py-3 transition-all duration-300 ",
         scrolled && "backdrop-blur-[6px]  bg-gradient-to-b from-black/70 to-transparent border-none"
       )}
     >
       {/* Logo */}
-      <Link href="/" className="w-14 z-[101]" onClick={() => setIsNavOpen(false)}>
+      <Link href="/" className=" w-14  z-[101]" onClick={() => setIsNavOpen(false)}>
         <Image
           src="/assets/images/nav-logo.png"
           alt="Logo"
@@ -96,7 +96,7 @@ const NavBar = () => {
             paddingY="10px"
             
           >
-            Join Us
+            Careers
           </Button>
         </Link>
         {/* Membership Button */}

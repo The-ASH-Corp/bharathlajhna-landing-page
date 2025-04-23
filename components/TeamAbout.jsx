@@ -92,7 +92,7 @@ const TeamAbout = () => {
           <div className="flex items-center justify-between sm:w-full">
             <div>
               <Title>Meet Our Team</Title>
-              <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px] sm:w-[95%] lg:w[70%]">
+              <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px] sm:w-[95%] lg:w-full ">
                 We Have The Best Team To Give You The Best Services Ever.
               </p>
             </div>

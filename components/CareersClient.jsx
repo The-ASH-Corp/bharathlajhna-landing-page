@@ -42,7 +42,7 @@ function CareersClient() {
           <div className="relative h-[85%]">
             <Image
               // priority={true}
-              src={"/assets/images/hr-blm.jpeg"}
+              src={"/assets/images/blmhr.jpeg"}
               alt="blm-hr-image"
               fill
               className="w-full object-contain"

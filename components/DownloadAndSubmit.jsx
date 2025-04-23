@@ -89,15 +89,15 @@ const DownloadAndSubmit = () => {
     <>
       <main className="w-full">
         <div>
-          <h1 className="font-poppins text-black text-xl">
+          {/* <h1 className="font-poppins text-black text-xl">
             Download Application Form for Admission as a Member
           </h1>
           <p className="font-poppins text-sm text-para_color mt-2">
             It&apos;s Easy with 3 Simple Steps
-          </p>
+          </p> */}
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mt-8">
-          <div className="flex flex-col items-start justify-end w-full bg-[#F6F6F6] h-48 sm:h-40 lg:h-48 p-6 gap-3 relative">
+          {/* <div className="flex flex-col items-start justify-end w-full bg-[#F6F6F6] h-48 sm:h-40 lg:h-48 p-6 gap-3 relative">
             <GrStatusGood className="text-2xl lg:text-2xl sm:text-xl" />
             <h1 className="font-poppins text-black text-md lg:text-base sm:text-xs" >
               Click Submit
@@ -116,11 +116,11 @@ const DownloadAndSubmit = () => {
                 className="w-full h-full object-cover object-center"
               />
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-col items-start justify-end w-full bg-[#F6F6F6] h-48 sm:h-40 lg:h-48 p-6 gap-3 relative">
             <BsDownload className="text-2xl sm:text-xl lg:text-2xl" />
-            <h1 className="font-poppins text-black text-md sm:text-xs lg:text-base w-2/3">
+            <h1 className="font-poppins text-black text-md sm:text-xs lg:text-base w-3/3">
               Download Your Membership Form
             </h1>
             <a href="/assets/files/BLM-membership.pdf" download={"BLM-membership.pdf"}>
@@ -140,8 +140,74 @@ const DownloadAndSubmit = () => {
               />
             </div>
           </div>
-
           <div className="flex flex-col items-start justify-end w-full bg-[#F6F6F6] h-48 sm:h-40 lg:h-48 p-6 gap-3 relative">
+            <BsDownload className="text-2xl sm:text-xl lg:text-2xl" />
+            <h1 className="font-poppins text-black text-md sm:text-xs lg:text-base w-3/3">
+              Download Your Mangal Bhoomi Form
+            </h1>
+            <a href="/assets/files/BLM-mangalbhoomi.pdf" download={"BLM-mangalbhoomi.pdf"}>
+              <button className="font-poppins bg-primary_color text-white text-base sm:text-xs lg:text-base px-4 py-2">
+                Download
+              </button>
+            </a>
+
+            <div className="absolute top-0 right-0 rotate-90 w-28 h-28">
+              <Image
+                src={"/assets/icons/pattern.svg"}
+                alt="paattern"
+                fill
+                quality={85}
+                priority={true}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-start justify-end w-full bg-[#F6F6F6] h-48 sm:h-40 lg:h-48 p-6 gap-3 relative">
+            <BsDownload className="text-2xl sm:text-xl lg:text-2xl" />
+            <h1 className="font-poppins text-black text-md sm:text-xs lg:text-base w-3/3">
+              Download Your Parivar Contribution Form
+            </h1>
+            <a href="/assets/files/BLM-parivar.pdf" download={"BLM-parivar.pdf"}>
+              <button className="font-poppins bg-primary_color text-white text-base sm:text-xs lg:text-base px-4 py-2">
+                Download
+              </button>
+            </a>
+
+            <div className="absolute top-0 right-0 rotate-90 w-28 h-28">
+              <Image
+                src={"/assets/icons/pattern.svg"}
+                alt="paattern"
+                fill
+                quality={85}
+                priority={true}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-start justify-end w-full bg-[#F6F6F6] h-48 sm:h-40 lg:h-48 p-6 gap-3 relative">
+            <BsDownload className="text-2xl sm:text-xl lg:text-2xl" />
+            <h1 className="font-poppins text-black text-md sm:text-xs lg:text-base w-3/3">
+              Download Your Agency Application Form
+            </h1>
+            <a href="/assets/files/BLM-agency.pdf" download={"BLM-agency.pdf"}>
+              <button className="font-poppins bg-primary_color text-white text-base sm:text-xs lg:text-base px-4 py-2">
+                Download
+              </button>
+            </a>
+
+            <div className="absolute top-0 right-0 rotate-90 w-28 h-28">
+              <Image
+                src={"/assets/icons/pattern.svg"}
+                alt="paattern"
+                fill
+                quality={85}
+                priority={true}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+
+          {/* <div className="flex flex-col items-start justify-end w-full bg-[#F6F6F6] h-48 sm:h-40 lg:h-48 p-6 gap-3 relative">
             <BsUpload className="text-2xl sm:text-xl lg:text-2xl" />
             <h1 className="font-poppins text-black text-md sm:text-xs lg:text-base w-2/3">
               Fill in the details and upload here.
@@ -175,7 +241,7 @@ const DownloadAndSubmit = () => {
                 className="w-full h-full object-cover object-center"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
 
