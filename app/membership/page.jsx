@@ -56,7 +56,7 @@ const Membership = () => {
   {/* Mobile Image */}
   <Image
     alt="Membership Hero Mobile"
-    src="/assets/images/mob_2.jpg" // <- Add a mobile-optimized image
+    src="/assets/images/mobilemember.jpg" // <- Add a mobile-optimized image
     fill
     priority
     sizes="100vw"

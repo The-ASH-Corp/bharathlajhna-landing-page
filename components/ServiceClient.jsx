@@ -158,7 +158,7 @@ const ServiceClient = () => {
     const updatedData =
       data?.data?.services?.map((item, index) => {
         const subtitleMap = {
-          "Land Development": "Transforming land into Oppurtunity",
+          "Land Development": "Turning land into Oppurtunity",
           "Housing Development": "Affordable Homes. Unshakable Trust",
           "BLM Transports": "Your Journey, Our Commitment",
           "Civil Supplies": "Delivering Essentials with Purpose and Precision",
