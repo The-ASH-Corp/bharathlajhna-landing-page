@@ -187,20 +187,42 @@ const BranchClient = () => {
     }
   }, [data]);
 
-  const keralaDistricts = [...new Set(branchData.kerala.map((branch) => branch.city))];
+  const keralaDistrictOrder = [
+    'Kasargod',
+    'Kannur',
+    'Wayanad',
+    'Kozhikode',
+    'Malappuram',
+    'Palakkad',
+    'Thrissur',
+    'Ernakulam',
+    'Idukki',
+    'Kottayam',
+    'Pathanamthitta',
+    'Alappuzha',
+    'Kollam',
+    'Trivandrum',
+  ];
+  
+
+  // const keralaDistricts = [...new Set(branchData.kerala.map((branch) => branch.city))];
+  const keralaDistricts = [...new Set(branchData.kerala.map((branch) => branch.district))]
+  .sort((a, b) => keralaDistrictOrder.indexOf(a) - keralaDistrictOrder.indexOf(b));
+
 
   const filteredBranches =
     activeTab === 'kerala'
       ? branchData.kerala.filter((branch) =>
-          selectedDistrict ? branch.city === selectedDistrict : true
+          selectedDistrict ? branch.district === selectedDistrict : true
         )
       : branchData[activeTab] || [];
 
   const BranchCard = ({ branch }) => (
     <div className="w-full flex flex-col p-6 gap-5 relative bg-slate-50">
       <div>
-        <p className="font-poppins text-sm font-semibold">{branch.district}</p>
-        <p className="font-poppins text-xs text-para_color mb-3">{branch.city}</p>
+        <p className="font-poppins text-sm font-semibold">{branch.city}</p>
+        <p className="font-poppins text-xs mb-3 ">{branch.district}</p>
+
         <p className="font-poppins text-xs text-para_color max-w-[90%]">{branch.address}</p>
       </div>
       <div className="w-full flex gap-2">
@@ -294,9 +316,9 @@ const BranchClient = () => {
               className="border p-2 rounded font-poppins text-sm"
             >
               <option value="">All Districts</option>
-              {keralaDistricts.map((city, index) => (
-                <option key={index} value={city}>
-                  {city}
+              {keralaDistricts.map((district, index) => (
+                <option key={index} value={district}>
+                  {district}
                 </option>
               ))}
             </select>

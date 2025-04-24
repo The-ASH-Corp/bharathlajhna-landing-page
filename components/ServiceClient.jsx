@@ -158,7 +158,7 @@ const ServiceClient = () => {
     const updatedData =
       data?.data?.services?.map((item, index) => {
         const subtitleMap = {
-          "Land Development": "Transforming land into profit",
+          "Land Development": "Transforming land into Oppurtunity",
           "Housing Development": "Affordable Homes. Unshakable Trust",
           "BLM Transports": "Your Journey, Our Commitment",
           "Civil Supplies": "Delivering Essentials with Purpose and Precision",
@@ -172,7 +172,7 @@ const ServiceClient = () => {
           title: item.title,
           description: item.description,
           image: item?.file?.url,
-          subtitle: subtitleMap[item.title] || "Turning Land into Opportunity", // default fallback
+          subtitle: subtitleMap[item.title], // default fallback
         };
       }) || [];
   

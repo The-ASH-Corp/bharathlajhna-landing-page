@@ -144,7 +144,7 @@ const GalleryTabs = () => {
         </div>
       </section>
       <section className="flex sm:grid sm:grid-cols-2 xl:grid-cols-3 sm:place-items-center flex-col gap-3 w-full items-start justify-start p-6 xl:max-w-[1290px]">
-        {activeTab === "photo_gallery" &&
+        {/* {activeTab === "photo_gallery" &&
           photoGallery?.map((item, index) => (
             <div key={index} className="relative w-full sm:w-full h-60">
               <p className="font-allenoire max-w-[250px] absolute z-10 bottom-3 left-3 text-white tracking-wider text-sm">
@@ -162,16 +162,42 @@ const GalleryTabs = () => {
                 />
               </div>
             </div>
+          ))} */}
+
+        {activeTab === "photo_gallery" &&
+          photoGallery?.map((item, index) => (
+            <div
+              key={index}
+              className="w-full sm:w-full max-w-xs mx-auto h-auto rounded overflow-hidden shadow-lg"
+            >
+              {/* Image */}
+              <div className="relative w-full h-60">
+                <Image
+                  alt="Gallery"
+                  src={`https://blm-cms.appii.space${item.file.url}`}
+                  fill
+                  quality={85}
+                  className="w-full h-full object-cover object-center rounded-t"
+                  priority={true}
+                />
+              </div>
+
+              {/* Description below image */}
+              <div className="p-4 bg-white">
+                <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
+                  {item.description}
+                </p>
+              </div>
+            </div>
           ))}
 
-        {activeTab === "video_gallery" &&
+        {/* {activeTab === "video_gallery" &&
           videoGallery?.map((item, index) => (
             <div key={index} className="relative w-full sm:w-full h-60">
               <p className="font-allenoire max-w-[250px] absolute z-10 bottom-3 left-3 text-white tracking-wider text-sm">
                 {item.description}
               </p>
-              {/*<div className=" z-[5] absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-[.7]"></div>*/}
-              <div className="relative w-full h-full">
+               <div className="relative w-full h-full">
                 <div
                   onClick={() =>
                     handleVideoClick(
@@ -190,9 +216,43 @@ const GalleryTabs = () => {
                 </video>
               </div>
             </div>
+          ))} */}
+        {activeTab === "video_gallery" &&
+          videoGallery?.map((item, index) => (
+            <div
+              key={index}
+              className="w-full sm:w-full max-w-xs mx-auto h-auto rounded overflow-hidden shadow-lg"
+            >
+              {/* Video */}
+              <div className="relative w-full h-60">
+                <div
+                  onClick={() =>
+                    handleVideoClick(
+                      `https://blm-cms.appii.space${item.file.url}`
+                    )
+                  }
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                >
+                  <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
+                </div>
+                <video muted className="w-full h-full object-cover">
+                  <source
+                    src={`https://blm-cms.appii.space${item.file.url}`}
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+
+              {/* Description below video */}
+              <div className="p-4 bg-white">
+                <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
+                  {item.description}
+                </p>
+              </div>
+            </div>
           ))}
 
-        {activeTab === "celebrations" &&
+        {/* {activeTab === "celebrations" &&
           celebrations?.map((item, index) => (
             <div key={index} className="relative w-full sm:w-full h-60">
               <p className="font-allenoire max-w-[250px] absolute z-10 bottom-3 left-3 text-white tracking-wider text-sm">
@@ -210,31 +270,57 @@ const GalleryTabs = () => {
                 />
               </div>
             </div>
+          ))} */}
+        {activeTab === "celebrations" &&
+          celebrations?.map((item, index) => (
+            <div
+              key={index}
+              className="w-full sm:w-full max-w-xs mx-auto h-auto rounded overflow-hidden shadow-lg"
+            >
+              {/* Image */}
+              <div className="relative w-full h-60">
+                <Image
+                  alt="Gallery"
+                  src={`https://blm-cms.appii.space${item.file.url}`}
+                  fill
+                  quality={85}
+                  priority={true}
+                  className="w-full h-full object-cover object-center rounded-t"
+                />
+              </div>
+
+              {/* Description below image */}
+              <div className="p-4 bg-white">
+                <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
+                  {item.description}
+                </p>
+              </div>
+            </div>
           ))}
+
         {activeTab === "csr_activities" &&
           csrActivities?.map((item, index) => (
             <div
               key={index}
-              className="relative w-full sm:w-full h-60 group overflow-hidden"
+              className="w-full sm:w-full max-w-xs mx-auto h-auto rounded overflow-hidden shadow-lg"
             >
-              {/* Text description appears on hover */}
-              <p className="font-poppins font-semibold max-w-[400px] absolute z-10 bottom-3 left-3 text-white tracking-wider text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {item.description}
-              </p>
-
-              {/* Gradient overlay appears on hover */}
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-black/70 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 z-[5]"></div>
-
               {/* Image */}
-              <div className="relative w-full h-full">
+              <div className="relative w-full h-60">
                 <Image
                   alt="Gallery"
                   src={`https://blm-cms.appii.space${item.file.url}`}
                   fill
                   priority={true}
                   quality={85}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center rounded-t"
                 />
+              </div>
+
+              {/* Description below the image */}
+              <div className="p-4 bg-white">
+                <p className="text-sm text-gray-800 font-semibold font-poppins tracking-wide">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
