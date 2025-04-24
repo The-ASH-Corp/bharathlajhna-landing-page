@@ -138,8 +138,6 @@
 
 // export default BranchClient;
 
-
-
 "use client";
 
 import { BRANCH_QUERY } from "@/constants/strapiQueries";
@@ -212,7 +210,6 @@ const BranchClient = () => {
     "Trivandrum",
   ];
 
-
   // const normalize = (str) => str.trim().toLowerCase().replace(/(^\w)/, (m) => m.toUpperCase());
   // const keralaDistricts = [...new Set(branchData.kerala.map((branch) => normalize(branch.district)))].sort(
   //   (a, b) => {
@@ -224,7 +221,6 @@ const BranchClient = () => {
 
   const keralaDistricts = keralaDistrictOrder;
 
-  
   // const keralaDistricts = [...new Set(branchData.kerala.map((branch) => branch.city))];
   // const keralaDistricts = [
   //   ...new Set(branchData.kerala.map((branch) => branch.district)),
@@ -367,10 +363,22 @@ const BranchClient = () => {
 
       <SectionDivision />
 
-      <section className="grid sm:grid-cols-3 lg:grid-cols-4 items-start justify-start w-full xl:max-w-[1290px] my-6 lg:my-10 gap-3">
+      {/* <section className="grid sm:grid-cols-3 lg:grid-cols-4 items-start justify-start w-full xl:max-w-[1290px] my-6 lg:my-10 gap-3">
         {filteredBranches.map((branch, index) => (
+         
           <BranchCard key={index} branch={branch} />
         ))}
+      </section> */}
+      <section className="grid sm:grid-cols-3 lg:grid-cols-4 items-start justify-start w-full xl:max-w-[1290px] my-6 lg:my-10 gap-3">
+        {filteredBranches.length > 0 ? (
+          filteredBranches.map((branch, index) => (
+            <BranchCard key={index} branch={branch} />
+          ))
+        ) : (
+          <div className="col-span-full text-center text-gray-500 font-poppins text-sm">
+            No branches available in this district.
+          </div>
+        )}
       </section>
     </>
   );
