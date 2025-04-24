@@ -183,11 +183,13 @@ const GalleryTabs = () => {
               </div>
 
               {/* Description below image */}
-              <div className="p-4 bg-white">
-                <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
-                  {item.description}
-                </p>
-              </div>
+              {item.description?.trim() && (
+                <div className="p-4 bg-white">
+                  <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
+                    {item.description}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
 
@@ -244,11 +246,13 @@ const GalleryTabs = () => {
               </div>
 
               {/* Description below video */}
-              <div className="p-4 bg-white">
-                <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
-                  {item.description}
-                </p>
-              </div>
+              {item.description?.trim() && (
+                <div className="p-4 bg-white">
+                  <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
+                    {item.description}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
 
@@ -290,11 +294,13 @@ const GalleryTabs = () => {
               </div>
 
               {/* Description below image */}
-              <div className="p-4 bg-white">
-                <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
-                  {item.description}
-                </p>
-              </div>
+              {item.description?.trim() && (
+                <div className="p-4 bg-white">
+                  <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
+                    {item.description}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
 
@@ -317,11 +323,13 @@ const GalleryTabs = () => {
               </div>
 
               {/* Description below the image */}
-              <div className="p-4 bg-white">
-                <p className="text-sm text-gray-800 font-semibold font-poppins tracking-wide">
-                  {item.description}
-                </p>
-              </div>
+              {item.description?.trim() && (
+                <div className="p-4 bg-white">
+                  <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
+                    {item.description}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
       </section>

@@ -207,7 +207,12 @@ const BranchClient = () => {
 
   // const keralaDistricts = [...new Set(branchData.kerala.map((branch) => branch.city))];
   const keralaDistricts = [...new Set(branchData.kerala.map((branch) => branch.district))]
-  .sort((a, b) => keralaDistrictOrder.indexOf(a) - keralaDistrictOrder.indexOf(b));
+  .sort((a, b) => {
+    const aIndex = keralaDistrictOrder.indexOf(a.trim());
+    const bIndex = keralaDistrictOrder.indexOf(b.trim());
+    return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+  });
+  
 
 
   const filteredBranches =

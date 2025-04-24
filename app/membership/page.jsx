@@ -45,7 +45,7 @@ const Membership = () => {
   {/* Desktop Image */}
   <Image
     alt="Membership Hero Desktop"
-    src="/assets/images/membership.jpg"
+    src="/assets/images/memberbanner.jpg"
     fill
     priority
     sizes="100vw"
