@@ -50,7 +50,7 @@ const Footer = () => {
 
         <div className="w-full flex flex-col justify-end sm:flex-row sm:justify-start gap-7 sm:gap-2 mt-10 font-poppins px-8 md:text-[15px] lg:text-[18px]">
           <div className="w-full flex justify-between">
-            <div className="sm:w-full flex flex-col gap-8 sm:flex-row sm:gap-10 lg:gap-32 sm:justify-around sm:items-start">
+            <div className="sm:w-full flex flex-col gap-8 sm:flex-row sm:gap-10 lg:gap-32 sm:justify-around  sm:items-start">
               <div>
                 <p className=" text-black opacity-50 mb-2">
                   HOUSING PROJECT

@@ -57,7 +57,7 @@ const AboutMain = () => {
       <section className="p-6 py-10 flex flex-col justify-center items-center gap-10">
         <main className="flex flex-col items-start justify-center gap-2 w-full lg:max-w-[1290px]">
           <Title>About BLM Society</Title>
-          <p className="font-poppins text-[20px] font-semibold text-gray-700">A Legacy of 21 Years. A Future of Possibilities.</p>
+          <p className="font-poppins   font-semibold text-gray-700 sm:text[15px] lg:text-[20px]">A Legacy of 21 Years. A Future of Possibilities.</p>
           {/* <p className="font-poppins text-para_color text-sm text-justify">
             {data?.data?.description !== null &&
             data?.data?.description.length > 0

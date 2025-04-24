@@ -42,19 +42,20 @@ const NavBar = () => {
   return (
     <nav
       className={classNames(
-        "fixed md:top-0  z-[100] flex  items-end md:items-center justify-between w-full px-2 md:px-3 md:py-4 py-3 transition-all duration-300 ",
+        "fixed md:top-0    z-[100] flex  items-center md:items-center justify-between w-full px-1  md:px-3 md:py-4 py-3 transition-all duration-300 ",
         scrolled && "backdrop-blur-[6px]  bg-gradient-to-b from-black/70 to-transparent border-none"
       )}
     >
       {/* Logo */}
-      <Link href="/" className=" w-14  z-[101]" onClick={() => setIsNavOpen(false)}>
+      <Link href="/" className=" w-14    z-[101]" onClick={() => setIsNavOpen(false)}>
         <Image
           src="/assets/images/nav-logo.png"
           alt="Logo"
           width={100}
           height={100}
           priority={true}
-        />
+            
+         />
       </Link>
 
       {/* Desktop Navigation */}
@@ -83,10 +84,10 @@ const NavBar = () => {
 
 
       {/* Buttons */}
-      <div className=" flex justify-end flex-wrap gap-3">
+      <div className=" flex justify-center  gap-3">
 
         {/* Membership Button */}
-        <Link href="/careers" className="">
+        <Link href="/careers" className="   ">
           <Button
             fontFamily="poppins"
             textColor="white"
@@ -108,7 +109,7 @@ const NavBar = () => {
             borderRadius="50px"
             paddingX="25px"
             paddingY="10px"
-            
+              
           >
             Membership
           </Button>
@@ -147,7 +148,7 @@ const NavBar = () => {
 
       {/* Mobile Menu */}
       {isNavOpen && (
-        <div className="fixed inset-0 z-[100] bg-white flex flex-col items-center p-6 pt-20 gap-6 h-screen">
+        <div className="fixed inset-0 z-[100] bg-white  flex flex-col items-center p-6 pt-20 gap-4 h-screen">
           <ul className="w-full font-poppins text-xl text-[#AAAAAA]">
             {navLinks.map(({ href, label }) => (
               <li

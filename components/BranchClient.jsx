@@ -195,7 +195,7 @@ const BranchClient = () => {
     'Malappuram',
     'Palakkad',
     'Thrissur',
-    'Ernakulam',
+    'Ernamkulam',
     'Idukki',
     'Kottayam',
     'Pathanamthitta',

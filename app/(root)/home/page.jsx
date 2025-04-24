@@ -116,7 +116,7 @@ const Home = () => {
           <p className="font-allenoire text-[22px] sm:text-[38px] lg:text-[58px]">
             Welcome to BLM
           </p>
-          <p className="font-poppins font-semibold text-[22px] sm:text-[38px] lg:text-[20px]">Empowering Lives. Building Futures.</p>
+          <p className="font-poppins font-semibold   lg:text-[20px]">Empowering Lives. Building Futures.</p>
 
           <div>
             <Image
@@ -178,7 +178,7 @@ const Home = () => {
             <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
               Why Choose Us
             </p>
-            <p className="font-poppins text-gray-700 font-semibold text-[22px] sm:text-[38px] lg:text-[20px]">We’re Not Just a Society. We’re a Shared Journey.</p>
+            <p className="font-poppins text-gray-700 font-semibold sm:text[15px] lg:text-[20px]">We’re Not Just a Society. We’re a Shared Journey.</p>
 
             <p className="font-poppins text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
             <span className="hidden sm:inline-block pt-4">  At BLM Society, we are more than a cooperative—we are a movement built on trust, togetherness, and transformation. As a self-governing community of dedicated individuals, we strive to empower our members socially, economically, and culturally.</span>
@@ -204,24 +204,24 @@ const Home = () => {
             <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
               Chairman’s Message
             </p>
-            <p className="font-poppins font-semibold text-[22px] sm:text-[38px] lg:text-[20px] text-gray-700">From the Heart of Our Leadership: A Message That Inspires</p>
+            <p className="font-poppins font-semibold sm:text[15px] lg:text-[20px] text-gray-700">From the Heart of Our Leadership: A Message That Inspires</p>
 
-            <p className="font-poppins mt-4 text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
+            <p className="font-poppins mt-4 md:text-start text-start text-[12px] text-para_color sm:text-[14px] lg:text-[18px]">
               Dear Members and Well-wishers,
-              <span className="hidden sm:inline-block pt-4">
+              <span className="  inline-block pt-4">
                 It fills me with immense pride and gratitude to extend my
                 heartfelt greetings to each of you. From our humble beginnings
                 in 2006 to our present status as one of India’s most respected
                 multistate cooperative societies, this journey has been nothing
                 short of extraordinary.
               </span>
-              <span className="hidden sm:inline-block pt-4">
+              <span className="  inline-block pt-4">
                 Our progress has been possible only because of the tireless
                 efforts of our leaders, staff, and members who placed their
                 trust in the vision of collective growth. I thank each one of
                 you for your continued support.
               </span>
-              <span className="hidden sm:inline-block pt-4">
+              <span className="  inline-block pt-4">
                 At BLM, we have always embraced change with courage and clarity.
                 Our commitment to ethical practices and quality services has
                 earned us trust in every household we serve. Whether through our
@@ -229,15 +229,15 @@ const Home = () => {
                 welfare programs—we aim to make a difference, one life at a
                 time.
               </span>
-              <span className="hidden sm:inline-block pt-4">
+              <span className="  inline-block pt-4">
                 As we move ahead, I assure you that our standards will only grow
                 stronger, our mission more focused, and our impact deeper. Let
                 us march forward together toward a future full of hope,
                 opportunity, and shared prosperity.
               </span>
-              <span className="hidden sm:block pt-4">With warm regards,</span>
-              <span className="hidden sm:block pt-2">R. Premkumar</span>
-              <span className="hidden sm:block pt-2">
+              <span className="block pt-4">With warm regards,</span>
+              <span className="block pt-2">R. Premkumar</span>
+              <span className="block pt-2">
                 Chairman, BLM Society
               </span>
             </p>
