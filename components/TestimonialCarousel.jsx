@@ -38,7 +38,7 @@ const TestimonialCarousel = ({ data }) => {
   }
 
   return (
-    <div className="relative w-full flex items-center justify-center">
+    <div className="relative w-full  flex items-center justify-center ">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         slidesPerView={ slidesPerView }
