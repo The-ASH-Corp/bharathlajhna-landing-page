@@ -199,6 +199,7 @@ const HeroCarousel = ({ data }) => {
       "/assets/images/mobbanner.jpeg",
       "/assets/images/mobbanner1.jpeg",
       "/assets/images/mobbanner3.jpeg",
+      "/assets/images/mob_2.jpg",
     ];
     const mobileUrl = mobileImages[index % mobileImages.length];
 

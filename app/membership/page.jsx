@@ -40,6 +40,7 @@ const Membership = () => {
   return (
     <>
      
+     
 
      <main className="relative w-full h-[100vh]">
   {/* Desktop Image */}
