@@ -92,15 +92,15 @@ const Footer = () => {
                 </p>
                 <ul className="  flex flex-col gap-2 lg:leading-9">
                   <li className="flex">
-                    Phone :{" "}
-                    <p className="flex flex-col">
-                      <span>+44- 2479 2445</span>
-                      <span>+44- 2479 2445</span>{" "}
-                    </p>
+                    Phone : 044 45550013
+                    {/* <p className="flex flex-col"> */}
+                      {/* <span> 044 45550013</span> */}
+                      {/* <span>+44- 2479 2445</span>{" "} */}
+                    {/* </p> */}
                   </li>
-                  <li>Mobile : 9597 775 333</li>
-                  <li>email : info@blmshcs.net</li>
-                  <li className="flex flex-col">
+                  <li>Mobile : 9597775333</li>
+                  <li>Email : info@bharathlajhna.com</li>
+                   <li className="flex flex-col">
                     <span className="text-accent_color">Toll Free Number</span>
                     <span>18003095005</span>
                   </li>

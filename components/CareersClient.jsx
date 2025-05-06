@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "./ui/Title";
 import Image from "next/image";
+import { MdOutlineEmail } from "react-icons/md";
 
 function CareersClient() {
   return (
@@ -35,11 +36,16 @@ function CareersClient() {
             but a brighter future for all.
           </p>
           <p className="text-sm md:text-[16px] lg:text-[20px]  text-para_color mt-2 max-w-[700px] leading-6 lg:leading-7">
-          As a dedicated HR professional with over 14 years of experience in teaching HR principles and implementing effective HR strategies, N Arunagiri is committed to fostering a positive and impactful workplace. His leadership style is rooted in empowerment, inclusion, and continuous improvement, making him a trusted mentor and resource for both students and professionals.
+            As a dedicated HR professional with over 14 years of experience in
+            teaching HR principles and implementing effective HR strategies, N
+            Arunagiri is committed to fostering a positive and impactful
+            workplace. His leadership style is rooted in empowerment, inclusion,
+            and continuous improvement, making him a trusted mentor and resource
+            for both students and professionals.
           </p>
         </div>
-        <div className=" w-[200px] h-[300px] lg:w-[450px] lg:h-[620px] bg-slate-50">
-          <div className="relative h-[85%]">
+        <div className=" w-[330px] h-[350px]   lg:w-[450px] lg:h-[620px] md:bg-slate-50">
+          <div className="relative h-[78%] md:h-[85%]  ">
             <Image
               // priority={true}
               src={"/assets/images/blmhr.jpeg"}
@@ -48,13 +54,17 @@ function CareersClient() {
               className="w-full object-contain"
             />
           </div>
-          <div className="text-center mt-2">
+          <div className="text-center mt-1 md:mt-2 ">
             <Title icon={false} className="md:text-lg">
-            N ARUNAGIRI
+              N ARUNAGIRI
             </Title>
-            <p className="text-sm text-para_color mt-1 ">
-            HR HEAD
-            </p>
+            <p className="text-sm text-para_color mt-[-1] md:mt-1 ">HR HEAD</p>
+            <div className="flex justify-center items-center h-full">
+              <div className="flex flex-row items-center gap-2">
+                <p className="text-para_color text-md md:text-lg"><MdOutlineEmail /></p>
+                <p className="text-para_color text-sm md:text-lg">hr@bharathlajhna.com</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
