@@ -17,10 +17,19 @@ const NavBar = () => {
   const handleNavMenu = () => setIsNavOpen((prev) => !prev);
 
   const socialLinks = [
-    { href: "https://www.facebook.com/bharathlajhnasociety?mibextid=LQQJ4d", icon: <FaFacebook /> },
+    {
+      href: "https://www.facebook.com/bharathlajhnasociety?mibextid=LQQJ4d",
+      icon: <FaFacebook />,
+    },
     { href: "https://wa.me/9597775333", icon: <FaWhatsapp /> },
-    { href: "https://youtube.com/@bharathlajhnamultistateco-3613", icon: <FaYoutube /> },
-    { href: "https://instagram.com/bharathlajhnasociety?igshid=MjAxZDBhZDhlNA", icon: <FaInstagram /> },
+    {
+      href: "https://youtube.com/@bharathlajhnamultistateco-3613",
+      icon: <FaYoutube />,
+    },
+    {
+      href: "https://instagram.com/bharathlajhnasociety?igshid=MjAxZDBhZDhlNA",
+      icon: <FaInstagram />,
+    },
   ];
 
   const navLinks = [
@@ -29,11 +38,12 @@ const NavBar = () => {
     { href: "/branch", label: "Branches" },
     { href: "/service", label: "Service" },
     { href: "/projects", label: "Projects" },
-    { href: "/gallery", label: "Gallery" }
+    { href: "/gallery", label: "Gallery" },
+    { href: "/legal", label: "Updates" },
   ];
 
   useEffect(() => {
-    console.log("pathname",pathname)
+    console.log("pathname", pathname);
     const handleScroll = () => setScrolled(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -43,19 +53,23 @@ const NavBar = () => {
     <nav
       className={classNames(
         "fixed md:top-0    z-[100] flex  items-center md:items-center justify-between w-full px-1  md:px-3 md:py-4 py-3 transition-all duration-300 ",
-        scrolled && "backdrop-blur-[6px]  bg-gradient-to-b from-black/70 to-transparent border-none"
+        scrolled &&
+          "backdrop-blur-[6px]  bg-gradient-to-b from-black/70 to-transparent border-none"
       )}
     >
       {/* Logo */}
-      <Link href="/" className=" w-14    z-[101]" onClick={() => setIsNavOpen(false)}>
+      <Link
+        href="/"
+        className=" w-14    z-[101]"
+        onClick={() => setIsNavOpen(false)}
+      >
         <Image
           src="/assets/images/nav-logo.png"
           alt="Logo"
           width={100}
           height={100}
           priority={true}
-            
-         />
+        />
       </Link>
 
       {/* Desktop Navigation */}
@@ -65,27 +79,28 @@ const NavBar = () => {
             <Link
               href={href}
               className={classNames(
-                "pb-1 relative inline-block",pathname === href && "font-semibold"
+                "pb-1 relative inline-block",
+                pathname === href && "font-semibold"
               )}
             >
               {label}
               <span
-               className={classNames(
-                "absolute left-0 bottom-0 h-[3px] rounded-full bg-yellow-300 transition-all duration-500 ease-in-out",
-                pathname === '/' && href === '/home' ? "w-full" : pathname === href ? "w-full" : "w-0"
-              )}
-              
+                className={classNames(
+                  "absolute left-0 bottom-0 h-[3px] rounded-full bg-yellow-300 transition-all duration-500 ease-in-out",
+                  pathname === "/" && href === "/home"
+                    ? "w-full"
+                    : pathname === href
+                    ? "w-full"
+                    : "w-0"
+                )}
               ></span>
             </Link>
           </li>
         ))}
       </ul>
 
-
-
       {/* Buttons */}
       <div className=" flex justify-center  gap-3">
-
         {/* Membership Button */}
         <Link href="/careers" className="   ">
           <Button
@@ -95,7 +110,6 @@ const NavBar = () => {
             borderRadius="50px"
             paddingX="25px"
             paddingY="10px"
-            
           >
             Careers
           </Button>
@@ -109,41 +123,40 @@ const NavBar = () => {
             borderRadius="50px"
             paddingX="25px"
             paddingY="10px"
-              
           >
             Membership
           </Button>
         </Link>
 
         {/* Mobile Menu Button */}
-        <div className="block z-[110] lg:hidden self-end" >
-            <Button
-              flexDirection="column"
-              gap="10"
-              bgColor="white"
-              width="40px"
-              height="40px"
-              borderRadius="50px"
-              onClick={handleNavMenu}
-              className={`${isNavOpen && "relative"}`}
-            >
-              <div
-                className={`w-[25px] h-[3px] bg-black rounded-full transition-all duration-300 ease-in-out ${
-                  isNavOpen ? "absolute rotate-45 mt-[1px]" : ""
-                }`}
-              ></div>
-              <div
-                className={`w-[25px] h-[3px] bg-black rounded-full mt-1 transition-all duration-300 ease-in-out ${
-                  isNavOpen ? "absolute -rotate-45 mb-1" : ""
-                }`}
-              ></div>
-              <div
-                className={`w-[25px] h-[3px] bg-black rounded-full mt-1 transition-all duration-300 ease-in-out ${
-                  isNavOpen ? "hidden" : ""
-                }`}
-              ></div>
-            </Button>
-          </div>
+        <div className="block z-[110] lg:hidden self-end">
+          <Button
+            flexDirection="column"
+            gap="10"
+            bgColor="white"
+            width="40px"
+            height="40px"
+            borderRadius="50px"
+            onClick={handleNavMenu}
+            className={`${isNavOpen && "relative"}`}
+          >
+            <div
+              className={`w-[25px] h-[3px] bg-black rounded-full transition-all duration-300 ease-in-out ${
+                isNavOpen ? "absolute rotate-45 mt-[1px]" : ""
+              }`}
+            ></div>
+            <div
+              className={`w-[25px] h-[3px] bg-black rounded-full mt-1 transition-all duration-300 ease-in-out ${
+                isNavOpen ? "absolute -rotate-45 mb-1" : ""
+              }`}
+            ></div>
+            <div
+              className={`w-[25px] h-[3px] bg-black rounded-full mt-1 transition-all duration-300 ease-in-out ${
+                isNavOpen ? "hidden" : ""
+              }`}
+            ></div>
+          </Button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
