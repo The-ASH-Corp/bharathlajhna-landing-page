@@ -39,7 +39,7 @@ const NavBar = () => {
     { href: "/service", label: "Service" },
     { href: "/projects", label: "Projects" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/legal", label: "Updates" },
+    { href: "/legal", label: "Update" },
   ];
 
   useEffect(() => {
