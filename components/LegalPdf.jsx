@@ -31,27 +31,27 @@ function LegalPdf() {
     {
       station: "Nedumkandam Police Station",
       crime: "Crime No. 233/2023, Crl.MC No. 2775/2023",
-      file: "/assets/files/BLM_nedumkandam_fir.pdf",
+      file: "/assets/files/blm_nedumkandam_fir.pdf",
     },
     {
       station: "Kanjar Police Station",
       crime: "Crime No. 183/2023, Crl.MC No. 4197/2024",
-      file: "/assets/files/BLM_kanjar_fir.pdf",
+      file: "/assets/files/kanjar_fir_blmm.pdf",
     },
     {
       station: "Adimaly Police Station",
       crime: "Crime No. 305/2023, Crl.MC No. 4208/2024",
-      file: "/assets/files/BLM_adimali_fir.pdf",
+      file: "/assets/files/blm_adimali_fir.pdf",
     },
     {
       station: "Thodupuzha Police Station",
       crime: "Crime No. 382/2023, Crl.MC No. 2808/2023",
-      file: "/assets/files/BLM-thodupuzha_fir.pdf",
+      file: "/assets/files/thodupuzha_fir_blmm.pdf",
     },
     {
       station: "Nadakkavu Police Station, Kozhikode",
       crime: "Crime No. 1040/2024, Crl.MC No. 10162/2024",
-      file: "/assets/files/BLM_nadakav_fir.pdf",
+      file: "/assets/files/blm_nadakkavu_fir.pdf",
     },
   ].map((item, index) => (
     <ul className="text-lg my-4" key={index}>

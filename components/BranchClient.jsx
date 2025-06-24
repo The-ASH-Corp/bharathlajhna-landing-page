@@ -249,10 +249,10 @@ const BranchClient = () => {
       </div>
       <div className="w-full flex gap-2">
         <a
-          href={`tel:+91${branch.phone}`}
+          href={`tel:+91 ${branch.phone}`}
           className="text-xs flex items-center justify-center w-full font-poppins text-[#000000CC] bg-[#00664E14] p-2"
         >
-          <ImPhone className="mr-2" /> {branch.phone}
+          <ImPhone className="mr-2" /> +91 {branch.phone}
         </a>
         <a
           href={branch.location}
