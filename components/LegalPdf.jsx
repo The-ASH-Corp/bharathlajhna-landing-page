@@ -41,7 +41,7 @@ function LegalPdf() {
     {
       station: "Adimaly Police Station",
       crime: "Crime No. 305/2023, Crl.MC No. 4208/2024",
-      file: "/assets/files/blm_adimali_fir.pdf",
+      file: "/assets/files/adimali_fir_blm.pdf",
     },
     {
       station: "Thodupuzha Police Station",
