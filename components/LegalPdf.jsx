@@ -31,7 +31,7 @@ function LegalPdf() {
     {
       station: "Nedumkandam Police Station",
       crime: "Crime No. 233/2023, Crl.MC No. 2775/2023",
-      file: "/assets/files/blm_nedumkandam_fir.pdf",
+      file: "/assets/files/nedumkandam_fir_blm.pdf",
     },
     {
       station: "Kanjar Police Station",
