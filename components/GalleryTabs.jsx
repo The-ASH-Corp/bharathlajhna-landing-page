@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import VideoModal from "./VideoModal";
 import { IoPlayCircleOutline } from "react-icons/io5";
+import ImageModal from "./ImageModal";
 
 const GalleryTabs = () => {
   const searchParams = useSearchParams();
@@ -17,8 +18,13 @@ const GalleryTabs = () => {
   const [videoGallery, setVideoGallery] = useState([]);
   const [celebrations, setCelebrations] = useState([]);
   const [csrActivities, setCsrActivities] = useState([]);
+  const [blmNews, setBlmNews] = useState([]);
   const [modalData, setModalData] = useState({
     videoUrl: "",
+    isOpen: false,
+  });
+  const [imageModal, setImageModal] = useState({
+    imageUrl: "",
     isOpen: false,
   });
 
@@ -28,10 +34,12 @@ const GalleryTabs = () => {
   );
 
   useEffect(() => {
+    console.log("BLM News:", data?.data?.galleryTabs?.[4]?.images);
     setPhotoGallery(data?.data?.galleryTabs[0]?.images);
     setVideoGallery(data?.data?.galleryTabs[1]?.images);
     setCelebrations(data?.data?.galleryTabs[2]?.images);
     setCsrActivities(data?.data?.galleryTabs[3]?.images);
+    setBlmNews(data?.data?.galleryTabs[4]?.images);
   }, [data]);
 
   const handleVideoClick = (url) => {
@@ -99,6 +107,13 @@ const GalleryTabs = () => {
         isOpen={modalData.isOpen}
         onClose={() => setModalData({ ...modalData, isOpen: false })}
       />
+
+      <ImageModal
+        isOpen={imageModal.isOpen}
+        imageUrl={imageModal.imageUrl}
+        onClose={() => setImageModal({ ...imageModal, isOpen: false })}
+      />
+
       <section className="flex flex-col items-start justify-start p-6 lg:max-w-[1290px] w-full">
         <div className="flex gap-4 w-full items-start justify-start">
           <button
@@ -141,6 +156,16 @@ const GalleryTabs = () => {
           >
             CSR Activities
           </button>
+          <button
+            onClick={() => setActiveTab("blm_news")}
+            className={`text-[10px] sm:text-[20px] lg:text-[22px] font-poppins ${
+              activeTab === "blm_news"
+                ? " text-black border-b-[1px] border-accent_color"
+                : "text-para_color"
+            }`}
+          >
+            BLM In News
+          </button>
         </div>
       </section>
       <section className="flex sm:grid sm:grid-cols-2 xl:grid-cols-3 sm:place-items-center flex-col gap-3 w-full items-start justify-start p-6 xl:max-w-[1290px]">
@@ -171,7 +196,15 @@ const GalleryTabs = () => {
               className="w-full sm:w-full max-w-xs mx-auto h-auto rounded overflow-hidden shadow-lg"
             >
               {/* Image */}
-              <div className="relative w-full h-60">
+              <div
+                onClick={() =>
+                  setImageModal({
+                    isOpen: true,
+                    imageUrl: `https://blm-cms.appii.space${item.file.url}`,
+                  })
+                }
+                className="relative w-full h-60"
+              >
                 <Image
                   alt="Gallery"
                   src={`https://blm-cms.appii.space${item.file.url}`}
@@ -282,7 +315,15 @@ const GalleryTabs = () => {
               className="w-full sm:w-full max-w-xs mx-auto h-auto rounded overflow-hidden shadow-lg"
             >
               {/* Image */}
-              <div className="relative w-full h-60">
+              <div
+                onClick={() =>
+                  setImageModal({
+                    isOpen: true,
+                    imageUrl: `https://blm-cms.appii.space${item.file.url}`,
+                  })
+                }
+                className="relative w-full h-60"
+              >
                 <Image
                   alt="Gallery"
                   src={`https://blm-cms.appii.space${item.file.url}`}
@@ -311,7 +352,15 @@ const GalleryTabs = () => {
               className="w-full sm:w-full max-w-xs mx-auto h-auto rounded overflow-hidden shadow-lg"
             >
               {/* Image */}
-              <div className="relative w-full h-60">
+              <div
+                onClick={() =>
+                  setImageModal({
+                    isOpen: true,
+                    imageUrl: `https://blm-cms.appii.space${item.file.url}`,
+                  })
+                }
+                className="relative w-full h-60"
+              >
                 <Image
                   alt="Gallery"
                   src={`https://blm-cms.appii.space${item.file.url}`}
@@ -323,6 +372,43 @@ const GalleryTabs = () => {
               </div>
 
               {/* Description below the image */}
+              {item.description?.trim() && (
+                <div className="p-4 bg-white">
+                  <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
+                    {item.description}
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
+
+        {activeTab === "blm_news" &&
+          blmNews?.map((item, index) => (
+            <div
+              key={index}
+              className="w-full sm:w-full max-w-xs mx-auto h-auto rounded overflow-hidden shadow-lg"
+            >
+              {/* Video */}
+              <div className="relative w-full h-60">
+                <div
+                  onClick={() =>
+                    handleVideoClick(
+                      `https://blm-cms.appii.space${item.file.url}`
+                    )
+                  }
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                >
+                  <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
+                </div>
+                <video muted className="w-full h-full object-cover">
+                  <source
+                    src={`https://blm-cms.appii.space${item.file.url}`}
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+
+              {/* Description below video */}
               {item.description?.trim() && (
                 <div className="p-4 bg-white">
                   <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px]">
