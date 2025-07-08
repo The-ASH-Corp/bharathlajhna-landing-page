@@ -354,7 +354,6 @@
 // export default ProjectTabs;
 
 
-
 "use client";
 
 import { PROJECT_QUERY } from "@/constants/strapiQueries";
@@ -368,27 +367,36 @@ const ProjectTabs = () => {
   const [activeTab, setActiveTab] = useState("kerala");
   const [projectsData, setProjectsData] = useState([]);
   const [filter, setFilter] = useState("upcoming");
+  const [mediaFilter, setMediaFilter] = useState("photos");
   const [imageModal, setImageModal] = useState({ isOpen: false, imageUrl: "" });
-   
 
-  const { loading, data } = useStrapi(
-    "/api/project-page",
-    PROJECT_QUERY
-  );
+  const { loading, data } = useStrapi("/api/project-page", PROJECT_QUERY);
 
   useEffect(() => {
     setProjectsData(data?.data?.projects?.tabs || []);
   }, [data]);
 
+  const getFileType = (url) => {
+    if (!url) return "";
+    const extension = url.split(".").pop().toLowerCase();
+    const photoExtensions = ["jpg", "jpeg", "png", "webp", "gif"];
+    const videoExtensions = ["mp4", "mov", "avi", "webm", "mkv"];
+    if (photoExtensions.includes(extension)) return "photos";
+    if (videoExtensions.includes(extension)) return "videos";
+    return "";
+  };
+
   return (
     <>
-    <ImageModal
-            isOpen={imageModal.isOpen}
-            imageUrl={imageModal.imageUrl}
-            onClose={() => setImageModal({ ...imageModal, isOpen: false })}
-          />
-       <section className="flex flex-col items-start justify-start p-6 lg:max-w-[1290px] w-full">
-         <div className="flex gap-4 w-full items-start justify-start">
+      <ImageModal
+        isOpen={imageModal.isOpen}
+        imageUrl={imageModal.imageUrl}
+        onClose={() => setImageModal({ ...imageModal, isOpen: false })}
+      />
+
+      <section className="flex flex-col items-start justify-start p-6 lg:max-w-[1290px] w-full">
+        {/* Location Tabs */}
+        <div className="flex gap-4 w-full items-start justify-start">
           {[
             { key: "kerala", label: "Kerala" },
             { key: "tamil", label: "Tamil Nadu" },
@@ -408,12 +416,13 @@ const ProjectTabs = () => {
           ))}
         </div>
 
-         <div className="flex gap-4 mt-6">
+        {/* Status + Media Type Filter */}
+        <div className="flex  gap-4 mt-6 items-center">
           {["upcoming", "ongoing", "completed"].map((status) => (
             <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`text-[11px] sm:text-[13px] lg:text-[14px] px-2 py-2 rounded-md font-poppins capitalize ${
+              className={`text-[11px] sm:text-[13px] lg:text-[14px] px-3 py-2 rounded-md font-poppins capitalize ${
                 filter === status
                   ? "bg-green-700 text-white"
                   : "text-para_color border border-black hover:bg-gray-100"
@@ -422,10 +431,20 @@ const ProjectTabs = () => {
               {status}
             </button>
           ))}
-        </div>
+                  </div>
+
+
+          <select
+            value={mediaFilter}
+            onChange={(e) => setMediaFilter(e.target.value)}
+            className="border border-gray-400 rounded-md px-3 py-2 text-[11px] sm:text-[13px] lg:text-[14px] font-poppins capitalize mt-2 md:mt-14 md:absolute md:right-[90px]"
+          >
+            <option value="photos">Photos</option>
+            <option value="videos">Videos</option>
+          </select>
       </section>
 
-       {loading ? (
+      {loading ? (
         <main className="w-full flex flex-col items-center justify-center h-[200px]">
           <AiOutlineLoading3Quarters className="animate-spin text-gray-500 text-7xl" />
         </main>
@@ -438,8 +457,14 @@ const ProjectTabs = () => {
               if (activeTab === "pondi") return projects.label === "Pondichery";
               return false;
             })
-            .map((projects, projIndex) =>
-              projects.slider.filter((project) => project.subtitle === filter).length === 0 ? (
+            .map((projects, projIndex) => {
+              const filteredProjects = projects.slider?.filter(
+                (project) =>
+                  project.subtitle === filter &&
+                  getFileType(project.file.url) === mediaFilter
+              );
+
+              return filteredProjects.length === 0 ? (
                 <div
                   key={projIndex}
                   className="w-full h-[200px] flex items-center justify-center"
@@ -453,65 +478,46 @@ const ProjectTabs = () => {
                   key={projIndex}
                   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-12 px-6 lg:max-w-[1290px] w-full mb-12"
                 >
-                  {projects.slider
-                    ?.filter((project) => project.subtitle === filter)
-                    .map((project, index) => (
+                  {filteredProjects.map((project, index) => (
+                    <div
+                      key={index}
+                      className="w-full h-auto max-w-xs mx-auto rounded overflow-hidden shadow-lg bg-white"
+                    >
+                      {/* Image or Video Preview */}
                       <div
-                        key={index}
-                        className="w-full h-auto max-w-xs mx-auto rounded overflow-hidden shadow-lg bg-white"
+                        onClick={() =>
+                          setImageModal({
+                            isOpen: true,
+                            imageUrl: `https://blm-cms.appii.space${project.file.url}`,
+                          })
+                        }
+                        className="relative w-full h-60 cursor-pointer"
                       >
-                         <div
-                          onClick={() =>
-                            setImageModal({
-                              isOpen: true,
-                              imageUrl: `https://blm-cms.appii.space${project.file.url}`,
-                            })
-                          }
-                          className="relative w-full h-60 cursor-pointer"
-                        >
-                          <Image
-                            alt={project.title || "Gallery"}
-                            src={`https://blm-cms.appii.space${project.file.url}`}
-                            fill
-                            quality={85}
-                            className="object-cover object-center rounded-t"
-                            priority={true}
-                          />
-                        </div>
-
-                         {project.title?.trim() && (
-                          <div className="p-4 bg-white max-h-[120px] overflow-y-auto">
-                            <p className="font-allenoire text-sm text-gray-800 tracking-wider whitespace-pre-line">
-                              {project.title}
-                            </p>
-                          </div>
-                        )}
+                        <Image
+                          alt={project.title || "Gallery"}
+                          src={`https://blm-cms.appii.space${project.file.url}`}
+                          fill
+                          quality={85}
+                          className="object-cover object-center rounded-t"
+                          priority={true}
+                        />
                       </div>
-                    ))}
+
+                      {/* Title */}
+                      {project.title?.trim() && (
+                        <div className="p-4 bg-white max-h-[120px] overflow-y-auto">
+                          <p className="font-allenoire text-sm text-gray-800 tracking-wider whitespace-pre-line">
+                            {project.title}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </section>
-              )
-            )}
+              );
+            })}
         </>
       )}
-
-       {/* {imageModal.isOpen && (
-        <div
-          onClick={() => setImageModal({ isOpen: false, imageUrl: "" })}
-          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 cursor-pointer rounded-lg"
-        >
-          <div className="relative w-11/12 max-w-2xl max-h-[70vh]">
-            <Image
-              src={imageModal.imageUrl}
-              alt="Preview"
-              layout="responsive"
-              width={800}
-              height={200}
-              objectFit="contain"
-              className="rounded shadow-lg"
-            />
-          </div>
-        </div>
-      )} */}
     </>
   );
 };
