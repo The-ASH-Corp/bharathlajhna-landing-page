@@ -21,8 +21,8 @@ const GalleryTabs = () => {
   const [csrActivities, setCsrActivities] = useState([]);
   const [blmNews, setBlmNews] = useState([]);
   const [blmProjects, setBlmProjects] = useState([]);
-  const [celebrationFilter, setCelebrationFilter] = useState("images");
-  const [csrFilter, setCsrFilter] = useState("images");
+  const [celebrationFilter, setCelebrationFilter] = useState("photos");
+  const [csrFilter, setCsrFilter] = useState("photos");
   const [modalData, setModalData] = useState({
     videoUrl: "",
     isOpen: false,
@@ -339,7 +339,7 @@ const GalleryTabs = () => {
       </section>
          {activeTab === "csr_activities" && (
           <div className="flex gap-4 mt-[-60px] px-14  w-full">
-            {["images", "videos"].map((type) => (
+            {["photos", "videos"].map((type) => (
               <button
                 key={type}
                 onClick={() => setCsrFilter(type)}
@@ -367,7 +367,7 @@ const GalleryTabs = () => {
           <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full py-6 gap-y-12 px-14">
             {csrActivities
               ?.filter((item) => {
-                if (csrFilter === "images")
+                if (csrFilter === "photos")
                   return item.file?.url?.match(/\.(jpg|jpeg|png|gif|webp)$/i);
                 if (csrFilter === "videos")
                   return item.file?.url?.match(/\.(mp4|mov|avi|webm)$/i);
@@ -460,7 +460,7 @@ const GalleryTabs = () => {
       <div className="flex flex-col gap-6 w-full items-start justify-start">
          {activeTab === "celebrations" && (
           <div className="flex gap-4 px-14 w-full">
-            {["images", "videos"].map((type) => (
+            {["photos", "videos"].map((type) => (
               <button
                 key={type}
                 onClick={() => setCelebrationFilter(type)}
@@ -470,7 +470,7 @@ const GalleryTabs = () => {
                     : "text-para_color border border-black hover:bg-gray-300"
                 }`}
               >
-                {type}
+                Celebration {type}
               </button>
             ))}
           </div>
@@ -486,7 +486,7 @@ const GalleryTabs = () => {
           {activeTab === "celebrations" &&
             celebrations
               ?.filter((item) => {
-                if (celebrationFilter === "images")
+                if (celebrationFilter === "photos")
                   return item.file?.url?.match(/\.(jpg|jpeg|png|gif|webp)$/i);
                 if (celebrationFilter === "videos")
                   return item.file?.url?.match(/\.(mp4|mov|avi|webm)$/i);

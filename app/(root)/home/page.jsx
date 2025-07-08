@@ -308,7 +308,7 @@ const Home = () => {
 
       {/* Our Projects Section */}
 
-      <main className="w-full flex items-center justify-center p-6 py-10">
+      {/* <main className="w-full flex items-center justify-center p-6 py-10">
         <section className="flex flex-col items-start justify-center gap-7 w-full lg:max-w-[1290px]">
           <p className="relative inline-block font-allenoire text-[18px] sm:text-[24px] lg:text-[28px]">
             Our Projects
@@ -401,7 +401,7 @@ const Home = () => {
               }
             })}
         </section>
-      </main>
+      </main> */}
 
       {/* Projects Section end */}
 
