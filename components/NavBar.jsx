@@ -127,6 +127,18 @@ const NavBar = () => {
             Membership
           </Button>
         </Link>
+         <Link href="https://bharathlajhna.in/" className="   ">
+          <Button
+            fontFamily="poppins"
+            textColor="white"
+            bgColor="#00664E"
+            borderRadius="50px"
+            paddingX="25px"
+            paddingY="10px"
+          >
+            Members Login
+          </Button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <div className="block z-[110] lg:hidden self-end">
