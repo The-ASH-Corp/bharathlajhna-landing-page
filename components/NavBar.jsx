@@ -127,7 +127,7 @@ const NavBar = () => {
             Membership
           </Button>
         </Link>
-         <Link href="https://bharathlajhna.in/" className="   ">
+        <Link href="https://bharathlajhna.in/" className="hidden lg:block  ">
           <Button
             fontFamily="poppins"
             textColor="white"
@@ -185,8 +185,25 @@ const NavBar = () => {
                 )}
               >
                 <Link href={href}>{label}</Link>
+               
               </li>
             ))}
+             <Link
+                  href="https://bharathlajhna.in/"
+                  onClick={() => setIsNavOpen(false)}
+                >
+                  <Button className="mt-2"
+                    fontFamily="poppins"
+                    textColor="white"
+                    bgColor="#00664E"
+                    borderRadius="50px"
+                    paddingX="25px"
+                    paddingY="10px"
+                    
+                  >
+                    Members Login
+                  </Button>
+                </Link>
           </ul>
 
           <div className="flex flex-col gap-3 items-center">
