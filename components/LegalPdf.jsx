@@ -53,6 +53,12 @@ function LegalPdf() {
       crime: "Crime No. 1040/2024, Crl.MC No. 10162/2024",
       file: "/assets/files/blm_nadakkavu_fir.pdf",
     },
+    {
+      station:"Munciff Court, Ernamkulam",
+      crime: "I.A. No. 2/2025 in O.S No. 524/2025",
+      file: "/assets/files/blm_marunadan.pdf",
+    }
+
   ].map((item, index) => (
     <ul className="text-lg my-4" key={index}>
       <li className="flex flex-wrap items-center gap-3">
