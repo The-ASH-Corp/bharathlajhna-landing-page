@@ -23,6 +23,7 @@ const GalleryTabs = () => {
   const [blmProjects, setBlmProjects] = useState([]);
   const [celebrationFilter, setCelebrationFilter] = useState("photos");
   const [csrFilter, setCsrFilter] = useState("photos");
+  const[newsFilter,setNewsFilter]=useState('photos')
   const [modalData, setModalData] = useState({
     videoUrl: "",
     isOpen: false,
@@ -302,7 +303,29 @@ const GalleryTabs = () => {
 
 
 
-        {activeTab === "blm_news" &&
+      </section>
+
+           {activeTab === "blm_news" && (
+          <div className="flex gap-4 mt-[-60px] px-14  w-full">
+            {["photos", "videos"].map((type) => (
+              <button
+                key={type}
+                onClick={() => setNewsFilter(type)}
+                className={`text-[12px] sm:text-[14px] lg:text-[16px]  rounded-md h-11 px-2 py-2  font-poppins capitalize ${
+                  newsFilter === type
+                    ? "text-white bg-green-700 border-b-[1px]   border-accent_color"
+                    : "text-para_color border border-black hover:bg-gray-300"
+                }`}
+              >
+              BLM News {type}
+              </button>
+            ))}
+          </div>
+        )}
+
+
+
+        {/* {activeTab === "blm_news" &&
           blmNews?.map((item, index) => (
             <div
               key={index}
@@ -336,7 +359,86 @@ const GalleryTabs = () => {
               )}
             </div>
           ))}
-      </section>
+ */}
+
+
+
+   {activeTab === "blm_news" && (
+          <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full py-6 gap-y-12 px-14">
+            {blmNews
+              ?.filter((item) => {
+                if (newsFilter === "photos")
+                  return item.file?.url?.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+                if (newsFilter === "videos")
+                  return item.file?.url?.match(/\.(mp4|mov|avi|webm)$/i);
+                return false;
+              })
+              .map((item, index) => {
+                const isImage = item.file?.url?.match(
+                  /\.(jpg|jpeg|png|gif|webp)$/i
+                );
+                const isVideo = item.file?.url?.match(/\.(mp4|mov|avi|webm)$/i);
+
+                return (
+                  <div
+                    key={index}
+                    className="w-full max-w-xs mx-auto h-[350px] rounded overflow-hidden shadow-lg "
+                  >
+                     {isImage && (
+                      <div
+                        onClick={() =>
+                          setImageModal({
+                            isOpen: true,
+                            imageUrl: `https://blm-cms.appii.space${item.file.url}`,
+                          })
+                        }
+                        className="relative w-full h-60 cursor-pointer"
+                      >
+                        <Image
+                          alt="Gallery"
+                          src={`https://blm-cms.appii.space${item.file.url}`}
+                          fill
+                          priority={true}
+                          quality={85}
+                          className="w-full h-full object-cover object-center rounded-t"
+                        />
+                      </div>
+                    )}
+
+                     {isVideo && (
+                      <div className="relative w-full h-60">
+                        <div
+                          onClick={() =>
+                            handleVideoClick(
+                              `https://blm-cms.appii.space${item.file.url}`
+                            )
+                          }
+                          className="absolute inset-0 flex items-center justify-center z-10"
+                        >
+                          <IoPlayCircleOutline className="text-white text-7xl cursor-pointer" />
+                        </div>
+                        <video muted className="w-full h-full object-cover">
+                          <source
+                            src={`https://blm-cms.appii.space${item.file.url}`}
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    )}
+
+                     {item.description?.trim() && (
+                      <div className="p-4 bg-white max-h-[120px] overflow-y-auto">
+                        <p className="font-allenoire text-sm text-gray-800 tracking-wider max-w-[250px] whitespace-pre-line">
+                          {item.description}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
+        )}
+
          {activeTab === "csr_activities" && (
           <div className="flex gap-4 mt-[-60px] px-14  w-full">
             {["photos", "videos"].map((type) => (
