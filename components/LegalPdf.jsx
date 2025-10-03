@@ -57,6 +57,11 @@ function LegalPdf() {
       station:"Munciff Court, Ernamkulam",
       crime: "I.A. No. 2/2025 in O.S No. 524/2025",
       file: "/assets/files/blm_marunadan.pdf",
+    },
+    {
+      station:"Ministry of Agriculture and Farmers Welfare",
+      crime: " R-11017/83/2015",
+      file: "/assets/files/noc-blm.pdf"
     }
 
   ].map((item, index) => (
