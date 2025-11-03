@@ -101,7 +101,7 @@ const Home = () => {
         </div>
         <div className="flex flex-col items-center justify-center px-7 py-1 lg:px-20">
           <p className="text-[16px] text-center font-allenoire text-[#07A750] sm:text-[30px] lg:text-[55px]">
-            <AnimatedCounter endValue={125} duration={1000} />+
+            <AnimatedCounter endValue={140} duration={1000} />+
           </p>
           <p className="text-[12px] text-center font-poppins font-[400] text-[#747474] sm:text-[18px] lg:text-[24px]">
             Branches
