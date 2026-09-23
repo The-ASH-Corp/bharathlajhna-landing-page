@@ -5,7 +5,7 @@ const nextConfig = {
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'blm-cms.appii.space',
+          hostname: 'api.bharathlajna.com',
         },
       ],
     },
