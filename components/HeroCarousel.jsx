@@ -192,7 +192,7 @@ const HeroCarousel = ({ data }) => {
   };
 
   const renderMedia = (item, index) => {
-    const desktopUrl = `https://blm-cms.appii.space${item.file.url}`;
+    const desktopUrl = `https://api.bharathlajna.com${item.file.url}`;
 
     // Hardcoded mobile images (should be dynamic ideally)
     const mobileImages = [
