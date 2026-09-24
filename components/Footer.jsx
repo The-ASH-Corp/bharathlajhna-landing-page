@@ -173,7 +173,7 @@ const Footer = () => {
 
         <div className="w-full flex justify-between px-4 py-9">
           <p className="font-poppins text-black opacity-40 text-[12px]">
-            &copy;2023 — Copyright
+            &copy;2023 — Copyright Bharath Lajhna
           </p>
 
           <p className="hidden sm:block font-poppins text-black opacity-40 text-[12px]">
